@@ -39,12 +39,12 @@ a { text-decoration: none; color: inherit; }
 .container { max-width: 1060px; margin: 0 auto; padding: 0 2.5rem; }
 
 .section-title {
+  font-family: 'Syne', sans-serif;
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.03em;
   color: #0f172a;
   margin-bottom: 0.4rem;
-  font-family: 'Syne', sans-serif;
 }
 .section-subtitle {
   font-size: 0.9rem;

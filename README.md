@@ -57,11 +57,11 @@ Expérience en développement d'applications métier lors de deux alternances ch
 
 ```
 ┌──────────────────┐       ┌──────────────────────┐
-│   experiences    │       │   tags_experience     │
+│   experiences    │       │   tags_experience    │
 ├──────────────────┤       ├──────────────────────┤
-│ id (PK)          │──────<│ id (PK)               │
-│ poste            │       │ experience_id (FK)    │
-│ entreprise       │       │ tag                   │
+│ id (PK)          │──────<│ id (PK)              │
+│ poste            │       │ experience_id (FK)   │
+│ entreprise       │       │ tag                  │
 │ lieu             │       └──────────────────────┘
 │ date_debut       │
 │ date_fin         │
@@ -71,19 +71,19 @@ Expérience en développement d'applications métier lors de deux alternances ch
 └──────────────────┘
 
 ┌──────────────────┐       ┌──────────────────────┐
-│   competences    │       │       projets         │
+│   competences    │       │       projets        │
 ├──────────────────┤       ├──────────────────────┤
-│ id (PK)          │       │ id (PK)               │
-│ categorie        │       │ titre                 │
-│ nom              │       │ categorie             │
-│ niveau (0-100)   │       │ description           │
-│ icone            │       │ contexte              │
-│ est_phare        │       │ technologies          │
-│ ordre            │       │ image_url             │
-└──────────────────┘       │ lien_github           │
-                           │ lien_demo             │
-                           │ est_featured          │
-                           │ ordre                 │
+│ id (PK)          │       │ id (PK)              │
+│ categorie        │       │ titre                │
+│ nom              │       │ categorie            │
+│ niveau (0-100)   │       │ description          │
+│ icone            │       │ contexte             │
+│ est_phare        │       │ technologies         │
+│ ordre            │       │ image_url            │
+└──────────────────┘       │ lien_github          │
+                           │ lien_demo            │
+                           │ est_featured         │
+                           │ ordre                │
                            └──────────────────────┘
 ```
 
