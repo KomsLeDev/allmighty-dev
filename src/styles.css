@@ -1,1 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #f8f5f0;
+  color: #1a1a2e;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: 'Syne', sans-serif; }
+
+a { text-decoration: none; color: inherit; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f8f5f0; }
+::-webkit-scrollbar-thumb { background: #d4c5b0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+
+::selection { background: rgba(37,99,235,0.12); color: #1a1a2e; }
+
+.section { padding: 6rem 0; }
+.section-alt .section-title {
+  color: #f8f5f0;
+}
+
+.section-alt .section-subtitle {
+  color: #94a3b8;
+}
+.container { max-width: 1060px; margin: 0 auto; padding: 0 2.5rem; }
+
+.section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+  font-family: 'Syne', sans-serif;
+}
+.section-subtitle {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 3rem;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 36px; height: 3px;
+  background: #2563eb;
+  border-radius: 2px;
+  margin-top: 0.6rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  color: #64748b;
+  letter-spacing: 0.02em;
+}
+.tag-blue {
+  background: rgba(37,99,235,0.06);
+  border-color: rgba(37,99,235,0.2);
+  color: #2563eb;
+}
+
+.loading {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 1rem;
+  padding: 5rem; color: #94a3b8; font-size: 0.9rem;
+}
+.spinner {
+  width: 32px; height: 32px;
+  border: 2px solid #e2e8f0;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 768px) {
+  .section { padding: 4rem 0; }
+  .container { padding: 0 1.25rem; }
+}
+p strong { color: #0f172a; font-weight: 600; }
+p { color: #64748b; font-size: 0.97rem; line-height: 1.8; }
