@@ -1,0 +1,236 @@
+<main class="page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">YKM<span>.</span></div>
+    <div class="nav-links">
+      <a href="#about">À PROPOS</a>
+      <a href="#skills">COMPÉTENCES</a>
+      <a href="#experience">EXPÉRIENCES</a>
+      <a href="#projects">PROJETS</a>
+      <a class="github-btn" href="https://github.com/KomsLeDev" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        GITHUB
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="about">
+    <div class="hero-content">
+      <p class="availability"><span class="dot"></span> DISPONIBLE · DÉVELOPPEUR WEB FULLSTACK</p>
+      <h1>Yang<br />Kong-Meng</h1>
+      <p class="subtitle">Diplômé Master MIAGE · Orléans</p>
+      <p class="speciality">
+        Spécialisé en <strong>Angular</strong>, <strong>React</strong>,
+        <strong>Node.js</strong> & <strong>Spring Boot</strong>
+      </p>
+      <div class="chips">
+        <span>SNCF</span>
+        <span>CARSAT</span>
+        <span>Power Platform</span>
+        <span>Fullstack</span>
+      </div>
+      <div class="hero-actions">
+        <a class="primary-btn" href="#experience">Voir mon parcours</a>
+        <a class="secondary-btn" href="assets/CV_Yang_Kong-Meng.pdf" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Télécharger le CV
+        </a>
+        <a class="github-link" href="https://github.com/KomsLeDev" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          KomsLeDev
+        </a>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat-card"><strong>2+</strong><span>ans d'alternance</span></div>
+      <div class="stat-card"><strong>10+</strong><span>technologies</span></div>
+      <div class="stat-card"><strong>5</strong><span>projets réalisés</span></div>
+    </div>
+
+    <!-- CHAT -->
+    <section class="chat-card">
+      <div class="chat-header">
+        <div class="robot" [class.robot--thinking]="robotMood === 'thinking'" [class.robot--talking]="robotMood === 'talking'">
+          <div class="antenna"></div>
+          <div class="robot-face">
+            <!-- Yeux idle : clignent normalement -->
+            <ng-container *ngIf="robotMood === 'idle'">
+              <span class="eye eye--idle"></span>
+              <span class="eye eye--idle"></span>
+            </ng-container>
+            <!-- Yeux thinking : tournent / regardent en haut -->
+            <ng-container *ngIf="robotMood === 'thinking'">
+              <span class="eye eye--thinking"></span>
+              <span class="eye eye--thinking"></span>
+            </ng-container>
+            <!-- Yeux talking : clignotent vite -->
+            <ng-container *ngIf="robotMood === 'talking'">
+              <span class="eye eye--talking"></span>
+              <span class="eye eye--talking"></span>
+            </ng-container>
+          </div>
+          <div class="robot-mouth" [class.robot-mouth--talking]="robotMood === 'talking'"></div>
+          <div class="online-dot"></div>
+        </div>
+        <div class="chat-header-text">
+          <h2>Assistant IA</h2>
+          <p *ngIf="robotMood === 'idle'">Posez-moi une question<br />sur mon parcours !</p>
+          <p *ngIf="robotMood === 'thinking'" class="status-thinking">⏳ En train de réfléchir...</p>
+          <p *ngIf="robotMood === 'talking'" class="status-talking">✍️ En train d'écrire...</p>
+        </div>
+        <div class="chat-icons">
+          <span title="Rafraîchir">↻</span>
+          <span title="Fermer">×</span>
+        </div>
+      </div>
+
+      <div class="messages" #messagesContainer>
+        <div *ngFor="let msg of messages" class="message-row" [class.user-row]="msg.from === 'user'">
+          <div class="mini-robot" *ngIf="msg.from === 'bot'">🤖</div>
+          <div class="message" [class.user]="msg.from === 'user'" [class.bot]="msg.from === 'bot'">
+            <div class="typing-dots" *ngIf="msg.typing">
+              <span></span><span></span><span></span>
+            </div>
+            <span *ngIf="!msg.typing">{{ msg.text }}</span>
+            <small *ngIf="!msg.typing">{{ msg.time }}</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-form">
+        <input
+          [(ngModel)]="userMessage"
+          name="message"
+          placeholder="Écrivez votre question..."
+          (keydown)="onEnterKey($event)"
+          [disabled]="isLoading"
+        />
+        <button (click)="sendMessage()" [disabled]="isLoading">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+      <p class="ai-note">✦ Réponses générées par IA</p>
+    </section>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section class="section skills-section" id="skills">
+    <p class="section-label">COMPÉTENCES TECHNIQUES</p>
+    <h2>Mon stack</h2>
+    <div class="skills-grid" *ngIf="skills && getSkillCategories().length > 0">
+      <div class="skill-group" *ngFor="let cat of getSkillCategories()">
+        <h3>{{ getCategoryLabel(cat) }}</h3>
+        <div class="skill-tags">
+          <span *ngFor="let skill of skills[cat]">{{ skill }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPÉRIENCES -->
+  <section class="section experience-section" id="experience">
+    <p class="section-label">PARCOURS PROFESSIONNEL</p>
+    <h2>Expériences</h2>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let exp of experiences">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>{{ exp.poste }}</h3>
+              <p class="timeline-company">
+                <strong>{{ exp.entreprise }}</strong>
+                <span class="badge">{{ exp.type }}</span>
+              </p>
+            </div>
+            <div class="timeline-meta">
+              <span class="timeline-period">{{ exp.periode }}</span>
+              <span class="timeline-location">📍 {{ exp.localisation }}</span>
+            </div>
+          </div>
+          <ul class="timeline-missions">
+            <li *ngFor="let mission of exp.missions">{{ mission }}</li>
+          </ul>
+          <div class="timeline-tags">
+            <span *ngFor="let tech of exp.technologies">{{ tech }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formation -->
+      <div class="timeline-item">
+        <div class="timeline-dot timeline-dot--edu"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>Master MIAGE – Mention assez bien</h3>
+              <p class="timeline-company">
+                <strong>Université d'Orléans – UFR Sciences & Techniques</strong>
+                <span class="badge badge--edu">Formation</span>
+              </p>
+            </div>
+            <div class="timeline-meta">
+              <span class="timeline-period">2022 – 2025</span>
+              <span class="timeline-location">📍 Orléans</span>
+            </div>
+          </div>
+          <ul class="timeline-missions">
+            <li>Méthodes Informatiques Appliquées à la Gestion des Entreprises</li>
+            <li>Formation en alternance : développement web, gestion de projet, systèmes d'information</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section class="section projects-section" id="projects">
+    <p class="section-label">PROJETS RÉALISÉS</p>
+    <h2>Quelques projets</h2>
+    <div class="project-grid">
+      <article class="project-card" *ngFor="let project of projects" (click)="goToProject(project.id)">
+        <div class="project-image" [attr.data-id]="project.id">
+          <div class="project-image-overlay">
+            <div class="project-tech-preview">
+              <span *ngFor="let tech of project.technologies?.slice(0,2)">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-body">
+          <h3>{{ project.titre }}</h3>
+          <p>{{ project.description }}</p>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span *ngFor="let tech of project.technologies?.slice(0,3)">{{ tech }}</span>
+            </div>
+            <span class="project-link">→</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Kong-Meng Yang ·
+      <a href="https://github.com/KomsLeDev" target="_blank">KomsLeDev</a> ·
+      <a href="https://allmighty-dev.fr" target="_blank">allmighty-dev.fr</a>
+    </p>
+  </footer>
+
+</main>
