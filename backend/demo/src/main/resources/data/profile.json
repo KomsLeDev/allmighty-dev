@@ -1,0 +1,15 @@
+{
+  "name": "Kong-Meng Yang",
+  "role": "Développeur Web Fullstack",
+  "localisation": "Vienne-en-Val / Orléans (45)",
+  "disponibilite": "Disponible immédiatement",
+  "github": "https://github.com/KomsLeDev",
+  "portfolio": "https://allmighty-dev.fr",
+  "formation": {
+    "diplome": "Master MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises)",
+    "etablissement": "Université d'Orléans",
+    "annee": "2025",
+    "details": "Formation en alternance orientée développement web, gestion de projet et systèmes d'information"
+  },
+  "resume": "Développeur web fullstack diplômé d'un Master MIAGE de l'Université d'Orléans. Deux ans d'alternance dans des environnements professionnels exigeants (SNCF, CARSAT). Maîtrise du développement frontend Angular et React, du backend Spring Boot et Node.js, ainsi que des outils low-code Microsoft Power Platform. À la recherche d'un poste en CDI dans la région Centre-Val de Loire ou en télétravail."
+}

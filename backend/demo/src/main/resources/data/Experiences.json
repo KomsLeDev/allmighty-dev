@@ -1,0 +1,36 @@
+[
+  {
+    "poste": "Alternant Développeur d'Applications Métier",
+    "entreprise": "CARSAT Centre-Val de Loire",
+    "type": "Alternance",
+    "periode": "Septembre 2024 – Août 2025",
+    "localisation": "Orléans",
+    "missions": [
+      "Développement et déploiement d'applications métier en environnement de production",
+      "Conception et automatisation de workflows pour optimiser les processus internes",
+      "Modélisation et structuration de bases de données applicatives",
+      "Intégration de solutions techniques adaptées aux besoins métier",
+      "Rédaction de documentation technique et fonctionnelle",
+      "Collaboration étroite avec les utilisateurs finaux (recueil des besoins, tests, suivi de projet)",
+      "Participation aux réunions d'équipe et contribution à l'amélioration continue des outils"
+    ],
+    "technologies": ["Power Apps", "Power Automate", "SharePoint", "Dataverse", "Power Platform"]
+  },
+  {
+    "poste": "Alternant Développeur d'Applications",
+    "entreprise": "SNCF – Saint-Pierre-des-Corps",
+    "type": "Alternance",
+    "periode": "Novembre 2022 – Août 2023",
+    "localisation": "Saint-Pierre-des-Corps",
+    "missions": [
+      "Développement d'une application de gestion des demandes après-vente, de la conception au déploiement",
+      "Conception et gestion d'une base de données relationnelle",
+      "Automatisation de processus métier pour améliorer l'efficacité opérationnelle",
+      "Analyse et visualisation de données pour le suivi d'activité",
+      "Participation à l'analyse des besoins utilisateurs et à la rédaction des spécifications fonctionnelles",
+      "Collaboration avec les équipes métier pour améliorer et faire évoluer les outils existants",
+      "Travail en environnement professionnel structuré avec respect des délais et des contraintes techniques"
+    ],
+    "technologies": ["Power Apps", "Power Automate", "Dataverse"]
+  }
+]

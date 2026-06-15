@@ -1,0 +1,47 @@
+[
+  {
+    "id": "portfolio-ia",
+    "titre": "Portfolio IA",
+    "description": "Portfolio personnel avec un assistant IA intégré permettant aux recruteurs de poser des questions sur mon parcours et mes compétences. Backend Spring Boot connecté à l'API Anthropic, frontend Angular 21.",
+    "technologies": ["Angular 21", "Spring Boot", "Java", "API Anthropic", "TypeScript"],
+    "github": "https://github.com/KomsLeDev",
+    "url": "https://allmighty-dev.fr",
+    "detail": "Ce portfolio est lui-même le projet. Il combine un backend Spring Boot qui appelle l'API Claude d'Anthropic avec un frontend Angular 21 moderne. L'IA est alimentée par un contexte structuré (JSON) décrivant mon parcours, ce qui lui permet de répondre précisément aux questions des recruteurs."
+  },
+  {
+    "id": "sncf-sav",
+    "titre": "Portail SAV SNCF",
+    "description": "Application de gestion des demandes après-vente pour le Technicentre SNCF de Saint-Pierre-des-Corps. Développée de la conception au déploiement en alternance.",
+    "technologies": ["Power Apps", "Power Automate", "Dataverse", "SharePoint"],
+    "github": null,
+    "url": null,
+    "detail": "Application métier complète permettant la gestion du cycle de vie des demandes SAV : création, suivi, planification des interventions et examens contradictoires, validation PV. Rôles multiples (Responsable SAV, Chargé d'affaires, Administrateur). Automatisation des workflows de notification et validation via Power Automate."
+  },
+  {
+    "id": "carsat-rh",
+    "titre": "Applications RH CARSAT",
+    "description": "Suite d'applications métier low-code pour la CARSAT Centre-Val de Loire : demandes de télétravail, temps partiel, gestion des congés et workflows d'approbation.",
+    "technologies": ["Power Apps", "Power Automate", "SharePoint", "Dataverse", "Office 365"],
+    "github": null,
+    "url": null,
+    "detail": "Développement et déploiement de plusieurs applications RH interconnectées sur Power Platform. Gestion des demandes de télétravail et temps partiel avec circuits de validation multi-niveaux (manager, RH, direction). Intégration Active Directory pour l'authentification et la gestion des droits utilisateurs."
+  },
+  {
+    "id": "onlycraft",
+    "titre": "OnlyCraft",
+    "description": "Plateforme web full stack collaborative développée en équipe de 5. Architecture microservices avec React, Java, MySQL, MongoDB et Docker.",
+    "technologies": ["React", "Java", "MySQL", "MongoDB", "Docker", "REST API"],
+    "github": "https://github.com/KomsLeDev",
+    "url": null,
+    "detail": "Projet collaboratif (5 personnes) : développement d'une plateforme web full stack avec React côté frontend et Java côté backend. Conception et implémentation d'API REST, gestion de bases de données MySQL et MongoDB, mise en place d'une architecture microservices, conteneurisation et déploiement avec Docker. Travail collaboratif avec Git."
+  },
+  {
+    "id": "pandemic",
+    "titre": "Pandemic",
+    "description": "Application web collaborative développée en équipe de 3. Frontend Angular, API REST Spring Boot, base de données MongoDB.",
+    "technologies": ["Angular", "Spring Boot", "MongoDB", "REST API", "Git"],
+    "github": "https://github.com/KomsLeDev",
+    "url": null,
+    "detail": "Projet collaboratif (3 personnes) : développement d'une application web reprenant le concept du jeu Pandemic. Conception du frontend avec Angular, développement d'une API REST avec Spring Boot, gestion de base de données MongoDB. Architecture client/serveur, travail en équipe avec Git, Trello et Discord."
+  }
+]
