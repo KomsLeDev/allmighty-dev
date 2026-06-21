@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PortfolioService {
-  private apiUrl = 'http://localhost:8080/api';
+  private apiUrl = 'https://allmighty-dev-production.up.railway.app/api';
 
   constructor(private http: HttpClient) {}
 
