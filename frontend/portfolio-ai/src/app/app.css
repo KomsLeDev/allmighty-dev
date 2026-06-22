@@ -199,12 +199,13 @@ h1 {
 }
 
 .chat-header {
-  padding: 18px 20px;
+  padding: 28px 20px 18px;
   display: flex;
   align-items: center;
   gap: 14px;
   border-bottom: 1px solid #e5eaf0;
   flex-shrink: 0;
+  position: relative;
 }
 
 .chat-header-text { flex: 1; }
@@ -232,12 +233,12 @@ h1 {
 
 .robot-head {
   position: relative;
-  width: 52px; height: 46px;
+  width: 50px; height: 44px;
   background: linear-gradient(155deg, #ffffff, #e8f1ff);
-  border-radius: 22px;
+  border-radius: 26px;
   box-shadow:
-    0 6px 16px rgba(37,99,235,0.18),
-    inset 0 -3px 6px rgba(37,99,235,0.08);
+    0 6px 16px rgba(37,99,235,0.16),
+    inset 0 -3px 6px rgba(37,99,235,0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -245,35 +246,46 @@ h1 {
   border: 1.5px solid #dbeafe;
 }
 
+.robot-cheek {
+  position: absolute;
+  width: 8px; height: 6px;
+  background: #fbcfe8;
+  border-radius: 50%;
+  opacity: 0.7;
+  top: 26px;
+}
+.robot-cheek--left { left: 4px; }
+.robot-cheek--right { right: 4px; }
+
 .robot-ear {
   position: absolute;
-  width: 7px; height: 16px;
+  width: 6px; height: 13px;
   background: linear-gradient(180deg, #bfdbfe, #93c5fd);
   border-radius: 4px;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
 }
-.robot-ear--left { left: -3px; }
-.robot-ear--right { right: -3px; }
+.robot-ear--left { left: -2px; }
+.robot-ear--right { right: -2px; }
 
 .antenna {
   position: absolute;
-  top: -14px;
+  top: -8px;
   left: 50%;
   transform: translateX(-50%);
-  width: 3px; height: 14px;
+  width: 3px; height: 8px;
   background: linear-gradient(180deg, #60a5fa, #2563eb);
   border-radius: 4px;
   z-index: 3;
 }
 .antenna-tip {
   position: absolute;
-  top: -8px; left: -4px;
-  width: 11px; height: 11px;
+  top: -6px; left: -3.5px;
+  width: 9px; height: 9px;
   background: #60a5fa;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(96,165,250,0.7);
+  box-shadow: 0 0 6px rgba(96,165,250,0.6);
   animation: antennaPulse 2s ease-in-out infinite;
 }
 
@@ -281,7 +293,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 11px;
 }
 
 .online-dot {
@@ -762,13 +774,15 @@ h1 {
 .robot--talking .antenna-tip { background: #34d399; box-shadow: 0 0 8px rgba(52,211,153,0.7); animation-duration: 0.4s; }
 .robot--talking .robot-ear { background: linear-gradient(180deg, #a7f3d0, #6ee7b7); }
 
-/* Yeux */
+/* Yeux — plus doux avec un petit reflet */
 .eye {
-  width: 9px; height: 9px;
+  width: 10px; height: 10px;
   border-radius: 50%;
   background: #2563eb;
   display: block;
   transition: all 0.3s;
+  position: relative;
+  box-shadow: inset -2px -2px 0 rgba(255,255,255,0.4);
 }
 
 .eye--idle { animation: blink 3.5s infinite; }
@@ -782,23 +796,25 @@ h1 {
 .eye--talking {
   background: #10b981;
   animation: talkingBlink 0.4s infinite;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-/* Bouche du robot */
+/* Bouche du robot — sourire doux (demi-cercle) */
 .robot-mouth {
   position: absolute;
-  bottom: 11px;
+  bottom: 9px;
   left: 50%;
   transform: translateX(-50%);
-  width: 14px; height: 3px;
-  background: #93c5fd;
-  border-radius: 2px;
+  width: 16px; height: 8px;
+  border-radius: 0 0 16px 16px;
+  background: transparent;
+  border: 2.5px solid #93c5fd;
+  border-top: none;
   transition: all 0.3s;
 }
 .robot-mouth--talking {
   animation: mouthTalk 0.3s ease-in-out infinite alternate;
-  background: #10b981;
+  border-color: #10b981;
 }
 
 /* Status chat header */
@@ -825,6 +841,6 @@ h1 {
   50%       { transform: scaleY(0.2); }
 }
 @keyframes mouthTalk {
-  0%   { width: 12px; height: 3px; }
-  100% { width: 20px; height: 6px; border-radius: 0 0 6px 6px; }
+  0%   { width: 13px; height: 6px; }
+  100% { width: 18px; height: 10px; }
 }
