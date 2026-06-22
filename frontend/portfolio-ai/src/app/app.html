@@ -63,36 +63,39 @@
     <section class="chat-card">
       <div class="chat-header">
         <div class="robot" [class.robot--thinking]="robotMood === 'thinking'" [class.robot--talking]="robotMood === 'talking'">
-          <div class="antenna"></div>
-          <div class="robot-face">
-            <!-- Yeux idle : clignent normalement -->
-            <ng-container *ngIf="robotMood === 'idle'">
-              <span class="eye eye--idle"></span>
-              <span class="eye eye--idle"></span>
-            </ng-container>
-            <!-- Yeux thinking : tournent / regardent en haut -->
-            <ng-container *ngIf="robotMood === 'thinking'">
-              <span class="eye eye--thinking"></span>
-              <span class="eye eye--thinking"></span>
-            </ng-container>
-            <!-- Yeux talking : clignotent vite -->
-            <ng-container *ngIf="robotMood === 'talking'">
-              <span class="eye eye--talking"></span>
-              <span class="eye eye--talking"></span>
-            </ng-container>
+          <div class="robot-glow"></div>
+          <div class="antenna">
+            <div class="antenna-tip"></div>
           </div>
-          <div class="robot-mouth" [class.robot-mouth--talking]="robotMood === 'talking'"></div>
+          <div class="robot-head">
+            <div class="robot-face">
+              <!-- Yeux idle : clignent normalement -->
+              <ng-container *ngIf="robotMood === 'idle'">
+                <span class="eye eye--idle"></span>
+                <span class="eye eye--idle"></span>
+              </ng-container>
+              <!-- Yeux thinking : tournent / regardent en haut -->
+              <ng-container *ngIf="robotMood === 'thinking'">
+                <span class="eye eye--thinking"></span>
+                <span class="eye eye--thinking"></span>
+              </ng-container>
+              <!-- Yeux talking : clignotent vite -->
+              <ng-container *ngIf="robotMood === 'talking'">
+                <span class="eye eye--talking"></span>
+                <span class="eye eye--talking"></span>
+              </ng-container>
+            </div>
+            <div class="robot-mouth" [class.robot-mouth--talking]="robotMood === 'talking'"></div>
+          </div>
+          <div class="robot-ear robot-ear--left"></div>
+          <div class="robot-ear robot-ear--right"></div>
           <div class="online-dot"></div>
         </div>
         <div class="chat-header-text">
           <h2>Assistant IA</h2>
-          <p *ngIf="robotMood === 'idle'">Posez-moi une question<br />sur mon parcours !</p>
+          <p *ngIf="robotMood === 'idle'">Posez-moi une question<br />sur le parcours de Kong-Meng !</p>
           <p *ngIf="robotMood === 'thinking'" class="status-thinking">⏳ En train de réfléchir...</p>
           <p *ngIf="robotMood === 'talking'" class="status-talking">✍️ En train d'écrire...</p>
-        </div>
-        <div class="chat-icons">
-          <span title="Rafraîchir">↻</span>
-          <span title="Fermer">×</span>
         </div>
       </div>
 
@@ -227,7 +230,7 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 Kong-Meng Yang ·
+    <p>© 2025 Kong-Meng Yang ·
       <a href="https://github.com/KomsLeDev" target="_blank">KomsLeDev</a> ·
       <a href="https://allmighty-dev.fr" target="_blank">allmighty-dev.fr</a>
     </p>
