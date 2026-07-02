@@ -134,6 +134,63 @@
   line-height: 1.75;
 }
 
+/* CONTEXTE & RÔLE */
+.context-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.06);
+}
+.context-block p {
+  margin: 0;
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+}
+.context-block strong {
+  color: #071127;
+}
+
+/* RÉSULTATS */
+.results-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.results-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.6;
+}
+.results-list svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #059669;
+}
+
+/* CAPTURES D'ÉCRAN */
+.screenshot-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.screenshot-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(15,23,42,0.06);
+}
+
 /* TECH GRID */
 .tech-grid {
   display: flex;
