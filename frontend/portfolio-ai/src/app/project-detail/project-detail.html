@@ -1,7 +1,7 @@
 <div class="project-page">
 
   <nav class="project-nav">
-    <div class="logo">YKM<span>.</span></div>
+    <div class="logo" (click)="goBack()">YKM<span>.</span></div>
     <button class="back-btn" (click)="goBack()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <polyline points="15 18 9 12 15 6"/>
@@ -38,7 +38,10 @@
         <a *ngIf="project().url" [href]="project().url" target="_blank" class="btn-secondary">
           Voir le site →
         </a>
-        <span *ngIf="!project().github && !project().url" class="confidential-badge">
+        <span *ngIf="!project().github && !project().url && project().visibility === 'prive'" class="confidential-badge">
+          🔒 Dépôt de code privé
+        </span>
+        <span *ngIf="!project().github && !project().url && project().visibility !== 'prive'" class="confidential-badge">
           🔒 Projet confidentiel – réalisé en entreprise
         </span>
       </div>
@@ -93,8 +96,21 @@
       </div>
     </section>
 
-    <!-- NOTE CONFIDENTIALITÉ si projet entreprise -->
-    <section class="project-section" *ngIf="!project().github">
+    <!-- NOTE CONFIDENTIALITÉ / PRIVÉ si pas de github -->
+    <section class="project-section" *ngIf="!project().github && project().visibility === 'prive'">
+      <div class="confidential-note">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <div>
+          <strong>Dépôt de code privé</strong>
+          <p>Ce projet a été réalisé en groupe dans le cadre de ma formation. Le dépôt de code est privé, mais je peux en parler en détail sur demande.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" *ngIf="!project().github && project().visibility !== 'prive'">
       <div class="confidential-note">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>

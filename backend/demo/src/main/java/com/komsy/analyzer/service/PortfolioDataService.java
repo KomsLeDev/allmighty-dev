@@ -20,6 +20,7 @@ public class PortfolioDataService {
                 - Si une information n'est pas dans le contexte, dis honnêtement que tu n'as pas cette information et invite le recruteur à contacter Kong-Meng directement.
                 - Réponds toujours en français.
                 - Sois concis mais complet (3 à 6 phrases maximum par réponse).
+                - Réponds en texte brut uniquement, sans aucune syntaxe Markdown (pas d'astérisques ** pour le gras, pas de listes à puces, pas de titres #).
                 - Tu peux mentionner le GitHub (https://github.com/KomsLeDev) ou le portfolio (https://allmighty-dev.fr) quand c'est pertinent.
                 
                 === PROFIL ===
