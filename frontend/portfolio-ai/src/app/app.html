@@ -62,48 +62,35 @@
     <!-- CHAT -->
     <section class="chat-card">
       <div class="chat-header">
-        <div class="robot" [class.robot--thinking]="robotMood === 'thinking'" [class.robot--talking]="robotMood === 'talking'">
-          <div class="robot-glow"></div>
-          <div class="antenna">
-            <div class="antenna-tip"></div>
-          </div>
-          <div class="robot-head">
-            <div class="robot-face">
-              <!-- Yeux idle : clignent normalement -->
-              <ng-container *ngIf="robotMood === 'idle'">
-                <span class="eye eye--idle"></span>
-                <span class="eye eye--idle"></span>
-              </ng-container>
-              <!-- Yeux thinking : tournent / regardent en haut -->
-              <ng-container *ngIf="robotMood === 'thinking'">
-                <span class="eye eye--thinking"></span>
-                <span class="eye eye--thinking"></span>
-              </ng-container>
-              <!-- Yeux talking : clignotent vite -->
-              <ng-container *ngIf="robotMood === 'talking'">
-                <span class="eye eye--talking"></span>
-                <span class="eye eye--talking"></span>
-              </ng-container>
-            </div>
-            <div class="robot-mouth" [class.robot-mouth--talking]="robotMood === 'talking'"></div>
-            <div class="robot-cheek robot-cheek--left"></div>
-            <div class="robot-cheek robot-cheek--right"></div>
-          </div>
-          <div class="robot-ear robot-ear--left"></div>
-          <div class="robot-ear robot-ear--right"></div>
-          <div class="online-dot"></div>
+        <div class="ai-avatar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="8" width="16" height="12" rx="3"/>
+            <path d="M12 8V4"/>
+            <circle cx="12" cy="3" r="1.4" fill="white" stroke="none"/>
+            <circle cx="9" cy="14" r="1.3" fill="white" stroke="none"/>
+            <circle cx="15" cy="14" r="1.3" fill="white" stroke="none"/>
+          </svg>
+          <span class="ai-status-dot" [class.ai-status-dot--thinking]="robotMood === 'thinking'" [class.ai-status-dot--talking]="robotMood === 'talking'"></span>
         </div>
         <div class="chat-header-text">
           <h2>Assistant IA</h2>
           <p *ngIf="robotMood === 'idle'">Posez-moi une question<br />sur le parcours de Kong-Meng !</p>
-          <p *ngIf="robotMood === 'thinking'" class="status-thinking">⏳ En train de réfléchir...</p>
-          <p *ngIf="robotMood === 'talking'" class="status-talking">✍️ En train d'écrire...</p>
+          <p *ngIf="robotMood === 'thinking'" class="status-thinking">En train de réfléchir...</p>
+          <p *ngIf="robotMood === 'talking'" class="status-talking">En train d'écrire...</p>
         </div>
       </div>
 
       <div class="messages" #messagesContainer>
         <div *ngFor="let msg of messages" class="message-row" [class.user-row]="msg.from === 'user'">
-          <div class="mini-robot" *ngIf="msg.from === 'bot'">🤖</div>
+          <div class="mini-robot" *ngIf="msg.from === 'bot'">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="8" width="16" height="12" rx="3"/>
+              <path d="M12 8V4"/>
+              <circle cx="12" cy="3" r="1.4" fill="white" stroke="none"/>
+              <circle cx="9" cy="14" r="1.3" fill="white" stroke="none"/>
+              <circle cx="15" cy="14" r="1.3" fill="white" stroke="none"/>
+            </svg>
+          </div>
           <div class="message" [class.user]="msg.from === 'user'" [class.bot]="msg.from === 'bot'">
             <div class="typing-dots" *ngIf="msg.typing">
               <span></span><span></span><span></span>
@@ -129,7 +116,7 @@
           </svg>
         </button>
       </div>
-      <p class="ai-note">✦ Réponses générées par IA</p>
+      <p class="ai-note">Réponses générées par IA</p>
     </section>
   </section>
 
@@ -165,7 +152,10 @@
             </div>
             <div class="timeline-meta">
               <span class="timeline-period">{{ exp.periode }}</span>
-              <span class="timeline-location">📍 {{ exp.localisation }}</span>
+              <span class="timeline-location">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                {{ exp.localisation }}
+              </span>
             </div>
           </div>
           <ul class="timeline-missions">
@@ -191,7 +181,10 @@
             </div>
             <div class="timeline-meta">
               <span class="timeline-period">2022 – 2025</span>
-              <span class="timeline-location">📍 Orléans</span>
+              <span class="timeline-location">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                Orléans
+              </span>
             </div>
           </div>
           <ul class="timeline-missions">

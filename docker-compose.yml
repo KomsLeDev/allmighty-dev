@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./backend/demo
+    ports:
+      - "8080:8080"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+
+  frontend:
+    build: ./frontend/portfolio-ai
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend

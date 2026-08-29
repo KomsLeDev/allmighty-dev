@@ -5,7 +5,7 @@
 
 .page {
   min-height: 100vh;
-  background: #f7f4ef;
+  background: #f8fafc;
   color: #071127;
   font-family: 'Inter', Arial, sans-serif;
 }
@@ -17,20 +17,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f7f4ef;
+  background: #071127;
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(7,17,39,0.06);
 }
 
 .logo {
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  color: #071127;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #ffffff;
 }
-.logo span { color: #2563eb; }
+.logo span { color: #60a5fa; }
 
 .nav-links {
   display: flex;
@@ -39,26 +38,26 @@
 }
 
 .nav-links a {
-  color: #64748b;
+  color: rgba(255,255,255,0.6);
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
   letter-spacing: 0.6px;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: #071127; }
+.nav-links a:hover { color: #ffffff; }
 
 .github-btn {
   display: flex;
   align-items: center;
   gap: 7px;
-  background: #071127 !important;
-  color: white !important;
+  background: #ffffff !important;
+  color: #071127 !important;
   padding: 10px 18px;
   border-radius: 8px;
   font-size: 12px !important;
 }
-.github-btn:hover { background: #1e3a5f !important; }
+.github-btn:hover { background: #e2e8f0 !important; }
 
 /* ─── HERO ─── */
 .hero {
@@ -91,10 +90,10 @@
 }
 
 h1 {
-  font-size: 76px;
-  font-weight: 900;
-  line-height: 0.92;
-  letter-spacing: -4px;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -2px;
   margin-bottom: 22px;
 }
 
@@ -181,7 +180,7 @@ h1 {
   justify-content: center;
   gap: 6px;
 }
-.stat-card strong { color: #2563eb; font-size: 32px; font-weight: 900; line-height: 1; }
+.stat-card strong { color: #2563eb; font-size: 30px; font-weight: 800; line-height: 1; }
 .stat-card span { color: #64748b; font-size: 13px; text-align: center; }
 
 /* ─── CHAT CARD ─── */
@@ -212,100 +211,30 @@ h1 {
 .chat-header-text h2 { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
 .chat-header-text p { color: #64748b; font-size: 13px; line-height: 1.4; }
 
-/* Robot — version améliorée, mascotte ronde et douce */
-.robot {
-  width: 68px; height: 68px;
-  position: relative;
+/* Avatar assistant IA — badge sobre avec indicateur de statut */
+.ai-avatar {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(155deg, #1d4ed8, #1e3a8a);
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   flex-shrink: 0;
-  animation: robotFloat 2.6s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.22);
 }
 
-.robot-glow {
+.ai-status-dot {
   position: absolute;
-  inset: -4px;
-  background: radial-gradient(circle, rgba(96,165,250,0.35), transparent 70%);
-  border-radius: 50%;
-  z-index: 0;
-}
-
-.robot-head {
-  position: relative;
-  width: 50px; height: 44px;
-  background: linear-gradient(155deg, #ffffff, #e8f1ff);
-  border-radius: 26px;
-  box-shadow:
-    0 6px 16px rgba(37,99,235,0.16),
-    inset 0 -3px 6px rgba(37,99,235,0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  border: 1.5px solid #dbeafe;
-}
-
-.robot-cheek {
-  position: absolute;
-  width: 8px; height: 6px;
-  background: #fbcfe8;
-  border-radius: 50%;
-  opacity: 0.7;
-  top: 26px;
-}
-.robot-cheek--left { left: 4px; }
-.robot-cheek--right { right: 4px; }
-
-.robot-ear {
-  position: absolute;
-  width: 6px; height: 13px;
-  background: linear-gradient(180deg, #bfdbfe, #93c5fd);
-  border-radius: 4px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-.robot-ear--left { left: -2px; }
-.robot-ear--right { right: -2px; }
-
-.antenna {
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3px; height: 8px;
-  background: linear-gradient(180deg, #60a5fa, #2563eb);
-  border-radius: 4px;
-  z-index: 3;
-}
-.antenna-tip {
-  position: absolute;
-  top: -6px; left: -3.5px;
-  width: 9px; height: 9px;
-  background: #60a5fa;
-  border-radius: 50%;
-  box-shadow: 0 0 6px rgba(96,165,250,0.6);
-  animation: antennaPulse 2s ease-in-out infinite;
-}
-
-.robot-face {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 11px;
-}
-
-.online-dot {
-  position: absolute;
-  right: 2px; bottom: 2px;
-  width: 12px; height: 12px;
-  background: #22c55e;
+  right: -2px; bottom: -2px;
+  width: 11px; height: 11px;
+  background: #94a3b8;
   border-radius: 50%;
   border: 2.5px solid white;
-  z-index: 4;
-  box-shadow: 0 0 0 2px rgba(34,197,94,0.2);
+  transition: background 0.2s;
 }
+.ai-status-dot--thinking { background: #f59e0b; animation: statusPulse 1s ease-in-out infinite; }
+.ai-status-dot--talking { background: #10b981; animation: statusPulse 0.6s ease-in-out infinite; }
 
 /* Messages */
 .messages {
@@ -328,7 +257,15 @@ h1 {
   gap: 8px;
 }
 .user-row { justify-content: flex-end; }
-.mini-robot { font-size: 18px; flex-shrink: 0; }
+.mini-robot {
+  width: 22px; height: 22px;
+  border-radius: 7px;
+  background: linear-gradient(155deg, #1d4ed8, #1e3a8a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
 .message {
   max-width: 80%;
@@ -430,9 +367,9 @@ h1 {
   margin-bottom: 10px;
 }
 .section h2 {
-  font-size: 36px;
-  font-weight: 900;
-  letter-spacing: -1px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
   margin-bottom: 40px;
 }
 
@@ -476,7 +413,7 @@ h1 {
 }
 
 /* ─── EXPÉRIENCES ─── */
-.experience-section { background: #f7f4ef; }
+.experience-section { background: #f8fafc; }
 
 .timeline {
   display: flex;
@@ -572,6 +509,9 @@ h1 {
   color: #334155;
 }
 .timeline-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   font-size: 12px;
   color: #94a3b8;
 }
@@ -636,7 +576,7 @@ h1 {
 
 .project-image {
   height: 130px;
-  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  background: linear-gradient(135deg, #0b1324, #1d4ed8);
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -710,17 +650,9 @@ h1 {
 .footer a:hover { color: white; }
 
 /* ─── ANIMATIONS ─── */
-@keyframes robotFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-@keyframes antennaPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.2); opacity: 0.7; }
-}
-@keyframes blink {
-  0%, 90%, 100% { transform: scaleY(1); }
-  95% { transform: scaleY(0.15); }
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 @keyframes typingBounce {
   0%, 60%, 100% { transform: translateY(0); }
@@ -752,71 +684,6 @@ h1 {
   .timeline-meta { align-items: flex-start; }
 }
 
-/* ─── ROBOT EXPRESSIONS ─── */
-
-/* thinking : tête jaune doux, antenne pulse plus vite */
-.robot--thinking { animation: robotFloat 1s ease-in-out infinite; }
-.robot--thinking .robot-head {
-  background: linear-gradient(155deg, #fffbeb, #fde68a);
-  border-color: #fcd34d;
-}
-.robot--thinking .antenna { background: linear-gradient(180deg, #fbbf24, #f59e0b); }
-.robot--thinking .antenna-tip { background: #fbbf24; box-shadow: 0 0 8px rgba(251,191,36,0.7); animation-duration: 0.8s; }
-.robot--thinking .robot-ear { background: linear-gradient(180deg, #fde68a, #fcd34d); }
-
-/* talking : tête verte douce */
-.robot--talking { animation: robotFloat 0.6s ease-in-out infinite; }
-.robot--talking .robot-head {
-  background: linear-gradient(155deg, #ecfdf5, #a7f3d0);
-  border-color: #6ee7b7;
-}
-.robot--talking .antenna { background: linear-gradient(180deg, #34d399, #10b981); }
-.robot--talking .antenna-tip { background: #34d399; box-shadow: 0 0 8px rgba(52,211,153,0.7); animation-duration: 0.4s; }
-.robot--talking .robot-ear { background: linear-gradient(180deg, #a7f3d0, #6ee7b7); }
-
-/* Yeux — plus doux avec un petit reflet */
-.eye {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: #2563eb;
-  display: block;
-  transition: all 0.3s;
-  position: relative;
-  box-shadow: inset -2px -2px 0 rgba(255,255,255,0.4);
-}
-
-.eye--idle { animation: blink 3.5s infinite; }
-
-.eye--thinking {
-  background: #f59e0b;
-  transform: translateY(-2px);
-  animation: thinkingEye 0.8s ease-in-out infinite alternate;
-}
-
-.eye--talking {
-  background: #10b981;
-  animation: talkingBlink 0.4s infinite;
-  border-radius: 5px;
-}
-
-/* Bouche du robot — sourire doux (demi-cercle) */
-.robot-mouth {
-  position: absolute;
-  bottom: 9px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px; height: 8px;
-  border-radius: 0 0 16px 16px;
-  background: transparent;
-  border: 2.5px solid #93c5fd;
-  border-top: none;
-  transition: all 0.3s;
-}
-.robot-mouth--talking {
-  animation: mouthTalk 0.3s ease-in-out infinite alternate;
-  border-color: #10b981;
-}
-
 /* Status chat header */
 .status-thinking { color: #f59e0b !important; font-weight: 600; }
 .status-talking  { color: #10b981 !important; font-weight: 600; }
@@ -824,23 +691,5 @@ h1 {
 /* ─── PROJECT CARD CLIQUABLE ─── */
 .project-card { cursor: pointer; }
 
-/* Couleurs par projet */
-.project-image[data-id="portfolio-ia"]  { background: linear-gradient(135deg, #1e3a8a, #2563eb); }
-.project-image[data-id="sncf-sav"]     { background: linear-gradient(135deg, #1a1a2e, #c0392b); }
-.project-image[data-id="carsat-rh"]    { background: linear-gradient(135deg, #134e4a, #0891b2); }
-.project-image[data-id="onlycraft"]    { background: linear-gradient(135deg, #312e81, #7c3aed); }
-.project-image[data-id="pandemic"]     { background: linear-gradient(135deg, #064e3b, #059669); }
-
-/* ─── ANIMATIONS ROBOT EXPRESSIONS ─── */
-@keyframes thinkingEye {
-  0%   { transform: translateY(-2px); opacity: 0.6; }
-  100% { transform: translateY(-4px); opacity: 1; }
-}
-@keyframes talkingBlink {
-  0%, 100% { transform: scaleY(1); }
-  50%       { transform: scaleY(0.2); }
-}
-@keyframes mouthTalk {
-  0%   { width: 13px; height: 6px; }
-  100% { width: 18px; height: 10px; }
-}
+/* Une seule identité visuelle de marque pour toutes les cartes projet */
+.project-image { background: linear-gradient(135deg, #0b1324, #1d4ed8); }

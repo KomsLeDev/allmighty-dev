@@ -32,7 +32,7 @@ export class App implements OnInit, AfterViewChecked {
   messages: Message[] = [
     {
       from: 'bot',
-      text: '👋 Bonjour ! Je suis votre assistant IA. Posez-moi une question sur le parcours, les compétences ou les projets de Kong-Meng.',
+      text: 'Bonjour ! Je suis votre assistant IA. Posez-moi une question sur le parcours, les compétences ou les projets de Kong-Meng.',
       time: this.currentTime()
     }
   ];
