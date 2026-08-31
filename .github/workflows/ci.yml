@@ -36,4 +36,6 @@ jobs:
           java-version: 17
           cache: maven
       - run: mvn test -B
+        env:
+          ANTHROPIC_API_KEY: dummy-ci-key
       - run: mvn package -DskipTests -B
