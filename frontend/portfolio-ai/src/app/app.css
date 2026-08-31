@@ -47,6 +47,29 @@
 }
 .nav-links a:hover { color: #ffffff; }
 
+.lang-switch {
+  display: flex;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.lang-switch button {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  padding: 7px 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-switch button.active {
+  background: #ffffff;
+  color: #071127;
+}
+.lang-switch button:not(.active):hover { color: #ffffff; }
+
 .github-btn {
   display: flex;
   align-items: center;
@@ -62,7 +85,7 @@
 /* ─── HERO ─── */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 180px 500px;
+  grid-template-columns: 1fr 180px 580px;
   gap: 32px;
   align-items: start;
   padding: 56px 56px 48px;
@@ -186,8 +209,8 @@ h1 {
 /* ─── CHAT CARD ─── */
 .chat-card {
   width: 100%;
-  max-width: 500px;
-  height: 620px;
+  max-width: 580px;
+  height: 680px;
   background: white;
   border: 1px solid #dfe6ee;
   border-radius: 16px;
@@ -195,7 +218,44 @@ h1 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.2s;
 }
+
+.chat-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7,17,39,0.55);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+}
+
+.chat-card--expanded {
+  position: fixed;
+  top: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(760px, 92vw);
+  max-width: none;
+  height: 90vh;
+  z-index: 1000;
+  box-shadow: 0 30px 80px rgba(7,17,39,0.4);
+}
+
+.chat-expand-btn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  color: #64748b;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.chat-expand-btn:hover { background: #f1f5f9; color: #071127; }
 
 .chat-header {
   padding: 28px 20px 18px;

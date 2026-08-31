@@ -14,9 +14,10 @@ public class ProjectController {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @GetMapping
-    public ResponseEntity<Object> getProjects() {
+    public ResponseEntity<Object> getProjects(@RequestParam(defaultValue = "fr") String lang) {
         try {
-            ClassPathResource resource = new ClassPathResource("data/projects.json");
+            String file = "en".equals(lang) ? "data/projects.en.json" : "data/projects.json";
+            ClassPathResource resource = new ClassPathResource(file);
             String json = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
             return ResponseEntity.ok(objectMapper.readValue(json, Object.class));
         } catch (Exception e) {

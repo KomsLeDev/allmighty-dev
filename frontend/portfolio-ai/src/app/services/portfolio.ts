@@ -1,20 +1,26 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { I18nService } from './i18n';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortfolioService {
   private apiUrl = /*'http://localhost:8080/api'*/'https://allmighty-dev-production.up.railway.app/api';
+  private i18n = inject(I18nService);
 
   constructor(private http: HttpClient) {}
 
+  private get lang(): string {
+    return this.i18n.lang();
+  }
+
   getProfile() {
-    return this.http.get(`${this.apiUrl}/profile`);
+    return this.http.get(`${this.apiUrl}/profile`, { params: { lang: this.lang } });
   }
 
   getProjects() {
-    return this.http.get(`${this.apiUrl}/projects`);
+    return this.http.get(`${this.apiUrl}/projects`, { params: { lang: this.lang } });
   }
 
   getSkills() {
@@ -22,10 +28,10 @@ export class PortfolioService {
   }
 
   getExperiences() {
-    return this.http.get(`${this.apiUrl}/experiences`);
+    return this.http.get(`${this.apiUrl}/experiences`, { params: { lang: this.lang } });
   }
 
   sendMessage(message: string) {
-    return this.http.post(`${this.apiUrl}/chat`, { message });
+    return this.http.post(`${this.apiUrl}/chat`, { message, lang: this.lang });
   }
 }

@@ -32,9 +32,12 @@ public class ChatService {
         this.portfolioDataService = portfolioDataService;
     }
 
-    public String answer(String userMessage) {
+    public String answer(String userMessage, String lang) {
+        boolean isEnglish = "en".equals(lang);
         if (userMessage == null || userMessage.isBlank()) {
-            return "Posez-moi une question sur le parcours, les compétences ou les projets de Kong-Meng.";
+            return isEnglish
+                ? "Ask me a question about Kong-Meng's background, skills or projects."
+                : "Posez-moi une question sur le parcours, les compétences ou les projets de Kong-Meng.";
         }
 
         try {
@@ -42,7 +45,7 @@ public class ChatService {
             Map<String, Object> body = Map.of(
                 "model", model,
                 "max_tokens", 1024,
-                "system", portfolioDataService.buildSystemPrompt(),
+                "system", portfolioDataService.buildSystemPrompt(lang),
                 "messages", List.of(
                     Map.of("role", "user", "content", userMessage)
                 )
@@ -65,12 +68,16 @@ public class ChatService {
                 return json.path("content").get(0).path("text").asText();
             } else {
                 System.err.println("Erreur Anthropic API - status: " + response.statusCode() + " - body: " + response.body());
-                return "Je rencontre un problème technique. Veuillez réessayer dans quelques instants.";
+                return isEnglish
+                    ? "I'm experiencing a technical issue. Please try again in a moment."
+                    : "Je rencontre un problème technique. Veuillez réessayer dans quelques instants.";
             }
 
         } catch (Exception e) {
             System.err.println("Exception lors de l'appel Anthropic : " + e.getMessage());
-            return "Je rencontre un problème technique. Veuillez réessayer dans quelques instants.";
+            return isEnglish
+                ? "I'm experiencing a technical issue. Please try again in a moment."
+                : "Je rencontre un problème technique. Veuillez réessayer dans quelques instants.";
         }
     }
 }

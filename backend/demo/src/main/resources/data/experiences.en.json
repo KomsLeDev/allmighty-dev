@@ -1,0 +1,36 @@
+[
+  {
+    "poste": "Work-Study Business Application Developer",
+    "entreprise": "CARSAT Centre-Val de Loire",
+    "type": "Work-study program",
+    "periode": "September 2024 – August 2025",
+    "localisation": "Orléans, France",
+    "missions": [
+      "Development and deployment of business applications in a production environment",
+      "Design and automation of workflows to optimize internal processes",
+      "Modeling and structuring of application databases",
+      "Integration of technical solutions tailored to business needs",
+      "Writing technical and functional documentation",
+      "Close collaboration with end users (requirements gathering, testing, project follow-up)",
+      "Participation in team meetings and continuous improvement of tools"
+    ],
+    "technologies": ["Power Apps", "Power Automate", "SharePoint", "Dataverse", "Power Platform"]
+  },
+  {
+    "poste": "Work-Study Application Developer",
+    "entreprise": "SNCF – Saint-Pierre-des-Corps",
+    "type": "Work-study program",
+    "periode": "November 2022 – August 2023",
+    "localisation": "Saint-Pierre-des-Corps, France",
+    "missions": [
+      "Development of an after-sales request management application, from design to deployment",
+      "Design and management of a relational database",
+      "Automation of business processes to improve operational efficiency",
+      "Data analysis and visualization for activity tracking",
+      "Participation in user needs analysis and functional specification writing",
+      "Collaboration with business teams to improve and evolve existing tools",
+      "Work in a structured professional environment, meeting deadlines and technical constraints"
+    ],
+    "technologies": ["Power Apps", "Power Automate", "Dataverse"]
+  }
+]

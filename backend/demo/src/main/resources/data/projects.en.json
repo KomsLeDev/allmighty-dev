@@ -1,0 +1,89 @@
+[
+  {
+    "id": "portfolio-ia",
+    "titre": "AI Portfolio",
+    "description": "Personal portfolio with a built-in AI assistant that lets recruiters ask questions about my background and skills. Spring Boot backend connected to the Anthropic API, Angular 21 frontend.",
+    "technologies": ["Angular 21", "Spring Boot", "Java", "Anthropic API", "TypeScript"],
+    "github": "https://github.com/KomsLeDev",
+    "url": null,
+    "detail": "This portfolio is itself the project. It combines a Spring Boot backend that calls Anthropic's Claude API with a modern Angular 21 frontend. The AI is fed a structured context (JSON) describing my background, allowing it to answer recruiters' questions precisely.",
+    "role": "Solo fullstack developer (design, development, deployment)",
+    "contexte": "Personal project built alongside my job search, to offer an interactive experience instead of a static resume.",
+    "resultats": [
+      "Live site actively used in my job applications",
+      "AI assistant able to answer recruiters' questions accurately, without ever straying from the provided context"
+    ],
+    "images": []
+  },
+  {
+    "id": "sncf-sav",
+    "titre": "SNCF After-Sales Portal",
+    "description": "After-sales request management application for the SNCF Technicentre in Saint-Pierre-des-Corps. Built from design to deployment during a work-study program.",
+    "technologies": ["Power Apps", "Power Automate", "Dataverse", "SharePoint"],
+    "github": null,
+    "url": null,
+    "detail": "Full business application (SAV_OPTER) handling the entire lifecycle of after-sales requests: creation, filtering by train set/region/status, planning of contradictory inspections and interventions, report (PV) validation. Multi-step workflow (plan inspection → complete inspection report → validate SAV handling → plan intervention → complete intervention report), with data split between SharePoint and Dataverse. Multiple user roles (SAV Manager, Account Manager, Client Manager, Administrator).",
+    "role": "Developer on a 9-month work-study program within the RAC & Digital unit, from design to deployment, sole developer on the app, with regular presentations to the steering committee",
+    "contexte": "Work-study program at the SNCF Technicentre in Saint-Pierre-des-Corps, November 2022 – August 2023.",
+    "resultats": [
+      "Application deployed and used in production to track after-sales requests across multiple train sets and regions",
+      "Automated calculation of due dates accounting for business days and public holidays (Power Fx formulas)",
+      "Multi-step validation workflow with fine-grained user role management (SAV Manager, Account Manager, Client Manager)"
+    ],
+    "images": []
+  },
+  {
+    "id": "carsat-rh",
+    "titre": "CARSAT Business Applications",
+    "description": "Two business applications built for CARSAT Centre-Val de Loire on Power Platform: GCP Opposants (migration of a Java application to Power Apps) and OSMOSe (remote-work and part-time requests with an approval workflow).",
+    "technologies": ["Power Apps", "Power Automate", "SharePoint", "Dataverse", "Office 365"],
+    "github": null,
+    "url": null,
+    "detail": "Two projects carried out in parallel on Microsoft Power Platform. GCP Opposants: migration of a legacy Java/SQL application to Power Apps for managing debtor accounts (treasuries, main revenue offices), backed by a SharePoint list of nearly 8,000 rows and an associated Active Directory migration. OSMOSe: application managing remote-work and part-time requests with a multi-level approval workflow (manager, division officer, HR) and automatic document generation.",
+    "role": "Developer on a 12-month work-study program within the Regional IT Department (Digital Transformation Unit), working autonomously on two distinct business applications, from design to deployment",
+    "contexte": "Work-study program at CARSAT Centre-Val de Loire, September 2024 – August 2025.",
+    "resultats": [
+      "GCP Opposants: worked around SharePoint's delegation limit (2,000 rows) with a custom pagination system in Power Automate/Power Fx to process a list of nearly 8,000 items in full",
+      "GCP Opposants: successful migration from a legacy Java environment to Power Platform, including an associated Active Directory migration",
+      "OSMOSe: working multi-level approval workflow (manager → division officer → HR) with fine-grained SharePoint item-level permissions",
+      "OSMOSe: automatic document generation from a template via Power Automate"
+    ],
+    "images": []
+  },
+  {
+    "id": "onlycraft",
+    "titre": "OnlyCraft",
+    "description": "Collaborative fullstack web platform built by a team of 5. Microservices architecture with React, Java, MySQL, MongoDB and Docker.",
+    "technologies": ["React", "Java", "MySQL", "MongoDB", "Docker", "REST API"],
+    "github": null,
+    "url": null,
+    "visibility": "prive",
+    "detail": "Team project (5 people): development of a fullstack web platform with React on the frontend and Java on the backend. Design and implementation of REST APIs, MySQL and MongoDB database management, microservices architecture, containerization and deployment with Docker. Collaborative work with Git.",
+    "role": "Fullstack developer within a team of 5, responsible for part of the Java backend and REST APIs",
+    "contexte": "Project carried out as part of my MIAGE degree, on a microservices architecture.",
+    "resultats": [
+      "Working platform delivered on time",
+      "Documented REST APIs",
+      "Docker containerization making team deployment easier"
+    ],
+    "images": []
+  },
+  {
+    "id": "pandemic",
+    "titre": "Pandemic",
+    "description": "Collaborative web application built by a team of 3. Angular frontend, Spring Boot REST API, MongoDB database.",
+    "technologies": ["Angular", "Spring Boot", "MongoDB", "REST API", "Git"],
+    "github": null,
+    "url": null,
+    "visibility": "prive",
+    "detail": "Team project (3 people): development of a web application based on the Pandemic board game concept. Angular frontend design, Spring Boot REST API development, MongoDB database management. Client/server architecture, teamwork with Git, Trello and Discord.",
+    "role": "Fullstack developer within a team of 3, responsible for the Angular frontend and part of the Spring Boot API",
+    "contexte": "Project carried out as part of my MIAGE degree, based on the Pandemic board game concept as a collaborative web application.",
+    "resultats": [
+      "Application delivered on time",
+      "Working client/server architecture",
+      "Team project management with Trello and Discord"
+    ],
+    "images": []
+  }
+]

@@ -14,9 +14,10 @@ public class Experiencescontroller {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @GetMapping
-    public ResponseEntity<Object> getExperiences() {
+    public ResponseEntity<Object> getExperiences(@RequestParam(defaultValue = "fr") String lang) {
         try {
-            ClassPathResource resource = new ClassPathResource("data/experiences.json");
+            String file = "en".equals(lang) ? "data/experiences.en.json" : "data/experiences.json";
+            ClassPathResource resource = new ClassPathResource(file);
             String json = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
             return ResponseEntity.ok(objectMapper.readValue(json, Object.class));
         } catch (Exception e) {

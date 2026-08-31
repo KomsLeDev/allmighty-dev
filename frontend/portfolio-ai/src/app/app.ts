@@ -1,8 +1,9 @@
-import { Component, OnInit, AfterViewChecked, ElementRef, ViewChild, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { PortfolioService } from './services/portfolio';
+import { I18nService, Lang } from './services/i18n';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 
 interface Message {
   from: 'user' | 'bot';
@@ -28,22 +29,27 @@ export class App implements OnInit, AfterViewChecked {
   isLoading = false;
   userMessage = '';
   robotMood: 'idle' | 'thinking' | 'talking' = 'idle';
+  chatExpanded = false;
 
-  messages: Message[] = [
-    {
-      from: 'bot',
-      text: 'Bonjour ! Je suis votre assistant IA. Posez-moi une question sur le parcours, les compétences ou les projets de Kong-Meng.',
-      time: this.currentTime()
-    }
-  ];
+  messages: Message[] = [];
 
   constructor(
     private portfolioService: PortfolioService,
     private cdr: ChangeDetectorRef,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    public i18n: I18nService
   ) {}
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.i18n.sync(params.get('lang'));
+      this.messages = [{ from: 'bot', text: this.i18n.t('chat.greeting'), time: this.currentTime() }];
+      this.loadData();
+    });
+  }
+
+  loadData(): void {
     this.portfolioService.getProfile().subscribe({
       next: (data: any) => {
         this.profile = data;
@@ -71,6 +77,14 @@ export class App implements OnInit, AfterViewChecked {
         this.cdr.detectChanges();
       }
     });
+  }
+
+  switchLang(lang: Lang): void {
+    this.i18n.switchTo(lang);
+  }
+
+  toggleChatExpanded(): void {
+    this.chatExpanded = !this.chatExpanded;
   }
 
   ngAfterViewChecked(): void {
@@ -105,7 +119,7 @@ export class App implements OnInit, AfterViewChecked {
 
     this.portfolioService.sendMessage(message).subscribe({
       next: (response: any) => {
-        const fullText = response?.answer || "Je n'ai pas reçu de réponse.";
+        const fullText = response?.answer || this.i18n.t('chat.noAnswer');
         this.messages[botMsgIndex].typing = false;
         this.robotMood = 'talking';
         this.cdr.detectChanges();
@@ -117,7 +131,7 @@ export class App implements OnInit, AfterViewChecked {
       },
       error: () => {
         this.messages[botMsgIndex].typing = false;
-        this.messages[botMsgIndex].text = 'Erreur : impossible de contacter le backend.';
+        this.messages[botMsgIndex].text = this.i18n.t('chat.error');
         this.robotMood = 'idle';
         this.isLoading = false;
         this.cdr.detectChanges();
@@ -151,18 +165,10 @@ export class App implements OnInit, AfterViewChecked {
   }
 
   getCategoryLabel(key: string): string {
-    const labels: Record<string, string> = {
-      frontend: 'Frontend',
-      backend: 'Backend',
-      base_de_donnees: 'Base de données',
-      lowcode: 'Low-Code',
-      outils: 'Outils',
-      methodologies: 'Méthodologies'
-    };
-    return labels[key] || key;
+    return this.i18n.t('skill.' + key);
   }
 
   goToProject(projectId: string): void {
-    this.router.navigate(['/projet', projectId]);
+    this.router.navigate(['/', this.i18n.lang(), 'projet', projectId]);
   }
 }

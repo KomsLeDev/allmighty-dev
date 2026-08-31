@@ -14,9 +14,10 @@ public class ProfileController {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @GetMapping
-    public ResponseEntity<Object> getProfile() {
+    public ResponseEntity<Object> getProfile(@RequestParam(defaultValue = "fr") String lang) {
         try {
-            ClassPathResource resource = new ClassPathResource("data/profile.json");
+            String file = "en".equals(lang) ? "data/profile.en.json" : "data/profile.json";
+            ClassPathResource resource = new ClassPathResource(file);
             String json = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
             return ResponseEntity.ok(objectMapper.readValue(json, Object.class));
         } catch (Exception e) {

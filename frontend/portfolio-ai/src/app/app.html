@@ -4,15 +4,19 @@
   <nav class="navbar">
     <div class="logo">YKM<span>.</span></div>
     <div class="nav-links">
-      <a href="#about">À PROPOS</a>
-      <a href="#skills">COMPÉTENCES</a>
-      <a href="#experience">EXPÉRIENCES</a>
-      <a href="#projects">PROJETS</a>
+      <a href="#about">{{ i18n.t('nav.about') }}</a>
+      <a href="#skills">{{ i18n.t('nav.skills') }}</a>
+      <a href="#experience">{{ i18n.t('nav.experience') }}</a>
+      <a href="#projects">{{ i18n.t('nav.projects') }}</a>
+      <div class="lang-switch">
+        <button [class.active]="i18n.lang() === 'fr'" (click)="switchLang('fr')">FR</button>
+        <button [class.active]="i18n.lang() === 'en'" (click)="switchLang('en')">EN</button>
+      </div>
       <a class="github-btn" href="https://github.com/KomsLeDev" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
         </svg>
-        GITHUB
+        {{ i18n.t('nav.github') }}
       </a>
     </div>
   </nav>
@@ -20,12 +24,12 @@
   <!-- HERO -->
   <section class="hero" id="about">
     <div class="hero-content">
-      <p class="availability"><span class="dot"></span> DISPONIBLE · DÉVELOPPEUR WEB FULLSTACK</p>
+      <p class="availability"><span class="dot"></span> {{ i18n.t('hero.availability') }}</p>
       <h1>Yang<br />Kong-Meng</h1>
-      <p class="subtitle">Diplômé Master MIAGE · Orléans</p>
+      <p class="subtitle">{{ i18n.t('hero.subtitle') }}</p>
       <p class="speciality">
-        Spécialisé en <strong>Angular</strong>, <strong>React</strong>,
-        <strong>Node.js</strong> & <strong>Spring Boot</strong>
+        {{ i18n.t('hero.specialityPrefix') }} <strong>Angular</strong>, <strong>React</strong>,
+        <strong>Node.js</strong> {{ i18n.t('hero.specialityAnd') }} <strong>Spring Boot</strong>
       </p>
       <div class="chips">
         <span>SNCF</span>
@@ -34,14 +38,14 @@
         <span>Fullstack</span>
       </div>
       <div class="hero-actions">
-        <a class="primary-btn" href="#experience">Voir mon parcours</a>
-        <a class="secondary-btn" href="CV_Yang_Kong-Meng.pdf" target="_blank" rel="noopener">
+        <a class="primary-btn" href="#experience">{{ i18n.t('hero.viewPath') }}</a>
+        <a class="secondary-btn" [href]="i18n.lang() === 'en' ? 'CV_Yang_Kong-Meng_EN.pdf' : 'CV_Yang_Kong-Meng.pdf'" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>
             <line x1="12" y1="15" x2="12" y2="3"/>
           </svg>
-          Télécharger le CV
+          {{ i18n.t('hero.downloadCv') }}
         </a>
         <a class="github-link" href="https://github.com/KomsLeDev" target="_blank">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -54,13 +58,14 @@
 
     <!-- STATS -->
     <div class="stats">
-      <div class="stat-card"><strong>2+</strong><span>ans d'alternance</span></div>
-      <div class="stat-card"><strong>10+</strong><span>technologies</span></div>
-      <div class="stat-card"><strong>5</strong><span>projets réalisés</span></div>
+      <div class="stat-card"><strong>2+</strong><span>{{ i18n.t('stats.experience') }}</span></div>
+      <div class="stat-card"><strong>10+</strong><span>{{ i18n.t('stats.technologies') }}</span></div>
+      <div class="stat-card"><strong>5</strong><span>{{ i18n.t('stats.projects') }}</span></div>
     </div>
 
     <!-- CHAT -->
-    <section class="chat-card">
+    <div class="chat-backdrop" *ngIf="chatExpanded" (click)="toggleChatExpanded()"></div>
+    <section class="chat-card" [class.chat-card--expanded]="chatExpanded">
       <div class="chat-header">
         <div class="ai-avatar">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -73,11 +78,21 @@
           <span class="ai-status-dot" [class.ai-status-dot--thinking]="robotMood === 'thinking'" [class.ai-status-dot--talking]="robotMood === 'talking'"></span>
         </div>
         <div class="chat-header-text">
-          <h2>Assistant IA</h2>
-          <p *ngIf="robotMood === 'idle'">Posez-moi une question<br />sur le parcours de Kong-Meng !</p>
-          <p *ngIf="robotMood === 'thinking'" class="status-thinking">En train de réfléchir...</p>
-          <p *ngIf="robotMood === 'talking'" class="status-talking">En train d'écrire...</p>
+          <h2>{{ i18n.t('chat.title') }}</h2>
+          <p *ngIf="robotMood === 'idle'" [innerHTML]="i18n.t('chat.idlePrompt')"></p>
+          <p *ngIf="robotMood === 'thinking'" class="status-thinking">{{ i18n.t('chat.thinking') }}</p>
+          <p *ngIf="robotMood === 'talking'" class="status-talking">{{ i18n.t('chat.talking') }}</p>
         </div>
+        <button class="chat-expand-btn" (click)="toggleChatExpanded()" [attr.aria-label]="chatExpanded ? i18n.t('chat.collapse') : i18n.t('chat.expand')">
+          <svg *ngIf="!chatExpanded" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+            <line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+          </svg>
+          <svg *ngIf="chatExpanded" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/>
+            <line x1="14" y1="10" x2="21" y2="3"/><line x1="10" y1="14" x2="3" y2="21"/>
+          </svg>
+        </button>
       </div>
 
       <div class="messages" #messagesContainer>
@@ -105,7 +120,7 @@
         <input
           [(ngModel)]="userMessage"
           name="message"
-          placeholder="Écrivez votre question..."
+          [placeholder]="i18n.t('chat.placeholder')"
           (keydown)="onEnterKey($event)"
           [disabled]="isLoading"
         />
@@ -116,14 +131,14 @@
           </svg>
         </button>
       </div>
-      <p class="ai-note">Réponses générées par IA</p>
+      <p class="ai-note">{{ i18n.t('chat.note') }}</p>
     </section>
   </section>
 
   <!-- COMPÉTENCES -->
   <section class="section skills-section" id="skills">
-    <p class="section-label">COMPÉTENCES TECHNIQUES</p>
-    <h2>Mon stack</h2>
+    <p class="section-label">{{ i18n.t('skills.label') }}</p>
+    <h2>{{ i18n.t('skills.title') }}</h2>
     <div class="skills-grid" *ngIf="skills && getSkillCategories().length > 0">
       <div class="skill-group" *ngFor="let cat of getSkillCategories()">
         <h3>{{ getCategoryLabel(cat) }}</h3>
@@ -136,8 +151,8 @@
 
   <!-- EXPÉRIENCES -->
   <section class="section experience-section" id="experience">
-    <p class="section-label">PARCOURS PROFESSIONNEL</p>
-    <h2>Expériences</h2>
+    <p class="section-label">{{ i18n.t('experience.label') }}</p>
+    <h2>{{ i18n.t('experience.title') }}</h2>
     <div class="timeline">
       <div class="timeline-item" *ngFor="let exp of experiences">
         <div class="timeline-dot"></div>
@@ -173,23 +188,23 @@
         <div class="timeline-content">
           <div class="timeline-header">
             <div>
-              <h3>Master MIAGE – Mention assez bien</h3>
+              <h3>{{ i18n.t('education.title') }}</h3>
               <p class="timeline-company">
-                <strong>Université d'Orléans – UFR Sciences & Techniques</strong>
-                <span class="badge badge--edu">Formation</span>
+                <strong>{{ i18n.t('education.school') }}</strong>
+                <span class="badge badge--edu">{{ i18n.t('education.badge') }}</span>
               </p>
             </div>
             <div class="timeline-meta">
-              <span class="timeline-period">2022 – 2025</span>
+              <span class="timeline-period">{{ i18n.t('education.period') }}</span>
               <span class="timeline-location">
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                Orléans
+                {{ i18n.t('education.location') }}
               </span>
             </div>
           </div>
           <ul class="timeline-missions">
-            <li>Méthodes Informatiques Appliquées à la Gestion des Entreprises</li>
-            <li>Formation en alternance : développement web, gestion de projet, systèmes d'information</li>
+            <li>{{ i18n.t('education.mission1') }}</li>
+            <li>{{ i18n.t('education.mission2') }}</li>
           </ul>
         </div>
       </div>
@@ -198,8 +213,8 @@
 
   <!-- PROJETS -->
   <section class="section projects-section" id="projects">
-    <p class="section-label">PROJETS RÉALISÉS</p>
-    <h2>Quelques projets</h2>
+    <p class="section-label">{{ i18n.t('projects.label') }}</p>
+    <h2>{{ i18n.t('projects.title') }}</h2>
     <div class="project-grid">
       <article class="project-card" *ngFor="let project of projects" (click)="goToProject(project.id)">
         <div class="project-image" [attr.data-id]="project.id">
