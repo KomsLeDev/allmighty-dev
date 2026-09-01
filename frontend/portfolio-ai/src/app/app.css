@@ -464,20 +464,38 @@ h1 {
   font-size: 16px;
   line-height: 1.75;
   margin-top: -22px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
+.repo-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #071127;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: opacity 0.2s;
+}
+.repo-link-btn:hover { opacity: 0.85; }
+
 .architecture-image {
-  aspect-ratio: 21 / 9;
-  border: 1.5px dashed #cbd5e1;
+  border: 1px solid #e5eaf0;
   border-radius: 12px;
   background: #f8fafc;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #94a3b8;
-  font-size: 13px;
-  font-weight: 600;
+}
+.architecture-image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ─── COMPÉTENCES ─── */
@@ -668,16 +686,20 @@ h1 {
 
 .timeline-learn-more {
   margin-top: 14px;
-  background: none;
-  border: none;
-  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  border: 1.5px solid #2563eb;
+  padding: 9px 18px;
+  border-radius: 8px;
   color: #2563eb;
   font-weight: 700;
   font-size: 13px;
   cursor: pointer;
-  transition: opacity 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
-.timeline-learn-more:hover { opacity: 0.7; }
+.timeline-learn-more:hover { background: #2563eb; color: white; }
 
 /* ─── PROJETS ─── */
 .projects-section { background: white; }
@@ -737,8 +759,9 @@ h1 {
 
 .project-footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
 }
 .project-tags {
   display: flex;
@@ -753,14 +776,18 @@ h1 {
   border-radius: 999px;
   color: #475569;
 }
-.project-link {
+.project-link-btn {
+  background: white;
+  border: 1.5px solid #071127;
   color: #071127;
-  font-size: 20px;
-  text-decoration: none;
+  padding: 9px 18px;
+  border-radius: 8px;
   font-weight: 700;
-  transition: color 0.2s;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
-.project-link:hover { color: #2563eb; }
+.project-link-btn:hover { background: #071127; color: white; }
 
 /* ─── COULISSES TECHNIQUES ─── */
 .devops-section { background: #f8fafc; }
@@ -803,19 +830,72 @@ h1 {
 .pipeline-step p { font-size: 13px; color: #64748b; line-height: 1.55; margin-bottom: 16px; }
 
 .pipeline-image {
-  aspect-ratio: 16 / 10;
-  border: 1.5px dashed #cbd5e1;
+  border: 1px solid #e5eaf0;
   border-radius: 8px;
   background: #f8fafc;
+  overflow: hidden;
+  margin-top: 14px;
+}
+.pipeline-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: zoom-in;
+  transition: opacity 0.2s;
+}
+.pipeline-image img:hover { opacity: 0.85; }
+
+.pipeline-image--split {
+  display: flex;
+  gap: 1px;
+}
+.pipeline-image--split img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.pipeline-caption {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* ─── ZOOM IMAGE (lightbox) ─── */
+.image-zoom-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7,17,39,0.75);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #94a3b8;
-  font-size: 12px;
-  font-weight: 600;
-  text-align: center;
-  padding: 8px;
+  padding: 40px;
+  cursor: zoom-out;
 }
+.image-zoom-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  cursor: default;
+}
+.image-zoom-close {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.image-zoom-close:hover { background: rgba(255,255,255,0.22); }
 
 .pipeline-arrow {
   color: #cbd5e1;
@@ -875,7 +955,6 @@ h1 {
   .timeline-header { flex-direction: column; gap: 8px; }
   .timeline-meta { align-items: flex-start; }
   .pipeline { grid-template-columns: 1fr; }
-  .architecture-image { aspect-ratio: 4 / 3; }
 }
 
 /* Status chat header */

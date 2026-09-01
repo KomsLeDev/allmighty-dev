@@ -30,6 +30,7 @@ export class App implements OnInit, AfterViewChecked {
   userMessage = '';
   robotMood: 'idle' | 'thinking' | 'talking' = 'idle';
   chatExpanded = false;
+  zoomedImage: string | null = null;
 
   messages: Message[] = [];
 
@@ -85,6 +86,14 @@ export class App implements OnInit, AfterViewChecked {
 
   toggleChatExpanded(): void {
     this.chatExpanded = !this.chatExpanded;
+  }
+
+  openZoom(src: string): void {
+    this.zoomedImage = src;
+  }
+
+  closeZoom(): void {
+    this.zoomedImage = null;
   }
 
   scrollToSection(id: string, event: Event): void {
