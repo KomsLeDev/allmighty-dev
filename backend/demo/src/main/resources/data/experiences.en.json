@@ -5,6 +5,8 @@
     "type": "Work-study program",
     "periode": "September 2024 – August 2025",
     "localisation": "Orléans, France",
+    "projectId": "carsat-rh",
+    "resume": "Designed and deployed two business applications on Microsoft Power Platform (GCP Opposants, OSMOSe), from design to production.",
     "missions": [
       "Development and deployment of business applications in a production environment",
       "Design and automation of workflows to optimize internal processes",
@@ -22,6 +24,8 @@
     "type": "Work-study program",
     "periode": "November 2022 – August 2023",
     "localisation": "Saint-Pierre-des-Corps, France",
+    "projectId": "sncf-sav",
+    "resume": "Designed and deployed an after-sales request management portal (SAV_OPTER) on Microsoft Power Platform, from design to production.",
     "missions": [
       "Development of an after-sales request management application, from design to deployment",
       "Design and management of a relational database",

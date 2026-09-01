@@ -1,23 +1,8 @@
 [
   {
-    "id": "portfolio-ia",
-    "titre": "AI Portfolio",
-    "description": "Personal portfolio with a built-in AI assistant that lets recruiters ask questions about my background and skills. Spring Boot backend connected to the Anthropic API, Angular 21 frontend.",
-    "technologies": ["Angular 21", "Spring Boot", "Java", "Anthropic API", "TypeScript"],
-    "github": "https://github.com/KomsLeDev",
-    "url": null,
-    "detail": "This portfolio is itself the project. It combines a Spring Boot backend that calls Anthropic's Claude API with a modern Angular 21 frontend. The AI is fed a structured context (JSON) describing my background, allowing it to answer recruiters' questions precisely.",
-    "role": "Solo fullstack developer (design, development, deployment)",
-    "contexte": "Personal project built alongside my job search, to offer an interactive experience instead of a static resume.",
-    "resultats": [
-      "Live site actively used in my job applications",
-      "AI assistant able to answer recruiters' questions accurately, without ever straying from the provided context"
-    ],
-    "images": []
-  },
-  {
     "id": "sncf-sav",
     "titre": "SNCF After-Sales Portal",
+    "linkedToExperience": true,
     "description": "After-sales request management application for the SNCF Technicentre in Saint-Pierre-des-Corps. Built from design to deployment during a work-study program.",
     "technologies": ["Power Apps", "Power Automate", "Dataverse", "SharePoint"],
     "github": null,
@@ -35,6 +20,7 @@
   {
     "id": "carsat-rh",
     "titre": "CARSAT Business Applications",
+    "linkedToExperience": true,
     "description": "Two business applications built for CARSAT Centre-Val de Loire on Power Platform: GCP Opposants (migration of a Java application to Power Apps) and OSMOSe (remote-work and part-time requests with an approval workflow).",
     "technologies": ["Power Apps", "Power Automate", "SharePoint", "Dataverse", "Office 365"],
     "github": null,

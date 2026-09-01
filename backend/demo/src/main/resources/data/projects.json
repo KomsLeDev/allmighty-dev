@@ -1,23 +1,8 @@
 [
   {
-    "id": "portfolio-ia",
-    "titre": "Portfolio IA",
-    "description": "Portfolio personnel avec un assistant IA intégré permettant aux recruteurs de poser des questions sur mon parcours et mes compétences. Backend Spring Boot connecté à l'API Anthropic, frontend Angular 21.",
-    "technologies": ["Angular 21", "Spring Boot", "Java", "API Anthropic", "TypeScript"],
-    "github": "https://github.com/KomsLeDev",
-    "url": null,
-    "detail": "Ce portfolio est lui-même le projet. Il combine un backend Spring Boot qui appelle l'API Claude d'Anthropic avec un frontend Angular 21 moderne. L'IA est alimentée par un contexte structuré (JSON) décrivant mon parcours, ce qui lui permet de répondre précisément aux questions des recruteurs.",
-    "role": "Développeur full stack en solo (conception, développement, déploiement)",
-    "contexte": "Projet personnel mené en parallèle de la recherche d'emploi, pour proposer une expérience interactive plutôt qu'un CV statique.",
-    "resultats": [
-      "Site en ligne et utilisé activement dans mes candidatures",
-      "Assistant IA capable de répondre avec précision aux questions des recruteurs, sans jamais sortir du contexte fourni"
-    ],
-    "images": []
-  },
-  {
     "id": "sncf-sav",
     "titre": "Portail SAV SNCF",
+    "linkedToExperience": true,
     "description": "Application de gestion des demandes après-vente pour le Technicentre SNCF de Saint-Pierre-des-Corps. Développée de la conception au déploiement en alternance.",
     "technologies": ["Power Apps", "Power Automate", "Dataverse", "SharePoint"],
     "github": null,
@@ -35,6 +20,7 @@
   {
     "id": "carsat-rh",
     "titre": "Applications métier CARSAT",
+    "linkedToExperience": true,
     "description": "Deux applications métier développées pour la CARSAT Centre-Val de Loire sur Power Platform : GCP Opposants (migration d'une application Java vers Power Apps) et OSMOSe (demandes de télétravail et temps partiel avec workflow d'approbation).",
     "technologies": ["Power Apps", "Power Automate", "SharePoint", "Dataverse", "Office 365"],
     "github": null,

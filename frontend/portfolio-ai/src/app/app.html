@@ -4,10 +4,11 @@
   <nav class="navbar">
     <div class="logo">YKM<span>.</span></div>
     <div class="nav-links">
-      <a href="#about">{{ i18n.t('nav.about') }}</a>
-      <a href="#skills">{{ i18n.t('nav.skills') }}</a>
-      <a href="#experience">{{ i18n.t('nav.experience') }}</a>
-      <a href="#projects">{{ i18n.t('nav.projects') }}</a>
+      <a href="#about" (click)="scrollToSection('about', $event)">{{ i18n.t('nav.about') }}</a>
+      <a href="#skills" (click)="scrollToSection('skills', $event)">{{ i18n.t('nav.skills') }}</a>
+      <a href="#experience" (click)="scrollToSection('experience', $event)">{{ i18n.t('nav.experience') }}</a>
+      <a href="#projects" (click)="scrollToSection('projects', $event)">{{ i18n.t('nav.projects') }}</a>
+      <a href="#devops" (click)="scrollToSection('devops', $event)">{{ i18n.t('nav.devops') }}</a>
       <div class="lang-switch">
         <button [class.active]="i18n.lang() === 'fr'" (click)="switchLang('fr')">FR</button>
         <button [class.active]="i18n.lang() === 'en'" (click)="switchLang('en')">EN</button>
@@ -38,7 +39,7 @@
         <span>Fullstack</span>
       </div>
       <div class="hero-actions">
-        <a class="primary-btn" href="#experience">{{ i18n.t('hero.viewPath') }}</a>
+        <a class="primary-btn" href="#experience" (click)="scrollToSection('experience', $event)">{{ i18n.t('hero.viewPath') }}</a>
         <a class="secondary-btn" [href]="i18n.lang() === 'en' ? 'CV_Yang_Kong-Meng_EN.pdf' : 'CV_Yang_Kong-Meng.pdf'" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -54,13 +55,20 @@
           KomsLeDev
         </a>
       </div>
+
+      <!-- STATS -->
+      <div class="stats">
+        <div class="stat-card"><strong>2+</strong><span>{{ i18n.t('stats.experience') }}</span></div>
+        <div class="stat-card"><strong>10+</strong><span>{{ i18n.t('stats.technologies') }}</span></div>
+        <div class="stat-card"><strong>4</strong><span>{{ i18n.t('stats.projects') }}</span></div>
+      </div>
     </div>
 
-    <!-- STATS -->
-    <div class="stats">
-      <div class="stat-card"><strong>2+</strong><span>{{ i18n.t('stats.experience') }}</span></div>
-      <div class="stat-card"><strong>10+</strong><span>{{ i18n.t('stats.technologies') }}</span></div>
-      <div class="stat-card"><strong>5</strong><span>{{ i18n.t('stats.projects') }}</span></div>
+    <!-- À PROPOS DE L'ASSISTANT IA -->
+    <div class="ai-intro">
+      <p class="section-label">{{ i18n.t('aiSection.label') }}</p>
+      <h3>{{ i18n.t('aiSection.title') }}</h3>
+      <p>{{ i18n.t('aiSection.text') }}</p>
     </div>
 
     <!-- CHAT -->
@@ -135,6 +143,98 @@
     </section>
   </section>
 
+  <!-- À PROPOS DU SITE -->
+  <section class="section site-about-section" id="site-about">
+    <p class="section-label">{{ i18n.t('siteAbout.label') }}</p>
+    <h2>{{ i18n.t('siteAbout.title') }}</h2>
+    <p class="site-about-text">{{ i18n.t('siteAbout.text') }}</p>
+    <div class="architecture-image">
+      <span>{{ i18n.t('siteAbout.placeholder') }}</span>
+    </div>
+  </section>
+
+  <!-- COULISSES TECHNIQUES -->
+  <section class="section devops-section" id="devops">
+    <p class="section-label">{{ i18n.t('devops.label') }}</p>
+    <h2>{{ i18n.t('devops.title') }}</h2>
+    <p class="devops-intro">{{ i18n.t('devops.intro') }}</p>
+
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="pipeline-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="3" x2="6" y2="15"/>
+            <circle cx="18" cy="6" r="3"/>
+            <circle cx="6" cy="18" r="3"/>
+            <path d="M18 9a9 9 0 0 1-9 9"/>
+          </svg>
+        </div>
+        <h3>{{ i18n.t('devops.git.title') }}</h3>
+        <p>{{ i18n.t('devops.git.desc') }}</p>
+        <div class="pipeline-image">
+          <span>{{ i18n.t('devops.placeholder') }}</span>
+        </div>
+      </div>
+
+      <div class="pipeline-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="pipeline-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/>
+            <polyline points="1 20 1 14 7 14"/>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+        </div>
+        <h3>{{ i18n.t('devops.ci.title') }}</h3>
+        <p>{{ i18n.t('devops.ci.desc') }}</p>
+        <div class="pipeline-image">
+          <span>{{ i18n.t('devops.placeholder') }}</span>
+        </div>
+      </div>
+
+      <div class="pipeline-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="pipeline-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+        </div>
+        <h3>{{ i18n.t('devops.docker.title') }}</h3>
+        <p>{{ i18n.t('devops.docker.desc') }}</p>
+        <div class="pipeline-image">
+          <span>{{ i18n.t('devops.placeholder') }}</span>
+        </div>
+      </div>
+
+      <div class="pipeline-arrow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
+      </div>
+
+      <div class="pipeline-step">
+        <div class="pipeline-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 17l4-4 4 4"/>
+            <path d="M12 12v9"/>
+            <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+          </svg>
+        </div>
+        <h3>{{ i18n.t('devops.deploy.title') }}</h3>
+        <p>{{ i18n.t('devops.deploy.desc') }}</p>
+        <div class="pipeline-image">
+          <span>{{ i18n.t('devops.placeholder') }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- COMPÉTENCES -->
   <section class="section skills-section" id="skills">
     <p class="section-label">{{ i18n.t('skills.label') }}</p>
@@ -173,12 +273,16 @@
               </span>
             </div>
           </div>
-          <ul class="timeline-missions">
+          <p class="timeline-resume" *ngIf="exp.projectId">{{ exp.resume }}</p>
+          <ul class="timeline-missions" *ngIf="!exp.projectId">
             <li *ngFor="let mission of exp.missions">{{ mission }}</li>
           </ul>
           <div class="timeline-tags">
             <span *ngFor="let tech of exp.technologies">{{ tech }}</span>
           </div>
+          <button class="timeline-learn-more" *ngIf="exp.projectId" (click)="goToProject(exp.projectId)">
+            {{ i18n.t('experience.learnMore') }}
+          </button>
         </div>
       </div>
 
@@ -216,7 +320,7 @@
     <p class="section-label">{{ i18n.t('projects.label') }}</p>
     <h2>{{ i18n.t('projects.title') }}</h2>
     <div class="project-grid">
-      <article class="project-card" *ngFor="let project of projects" (click)="goToProject(project.id)">
+      <article class="project-card" *ngFor="let project of visibleProjects()" (click)="goToProject(project.id)">
         <div class="project-image" [attr.data-id]="project.id">
           <div class="project-image-overlay">
             <div class="project-tech-preview">
