@@ -87,6 +87,11 @@ export class App implements OnInit, AfterViewChecked {
     this.chatExpanded = !this.chatExpanded;
   }
 
+  scrollToSection(id: string, event: Event): void {
+    event.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
   ngAfterViewChecked(): void {
     this.scrollToBottom();
   }
@@ -157,6 +162,10 @@ export class App implements OnInit, AfterViewChecked {
       event.preventDefault();
       this.sendMessage();
     }
+  }
+
+  visibleProjects(): any[] {
+    return this.projects.filter((p: any) => !p.linkedToExperience);
   }
 
   getSkillCategories(): string[] {

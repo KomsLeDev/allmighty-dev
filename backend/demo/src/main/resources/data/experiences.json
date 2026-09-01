@@ -5,6 +5,8 @@
     "type": "Alternance",
     "periode": "Septembre 2024 – Août 2025",
     "localisation": "Orléans",
+    "projectId": "carsat-rh",
+    "resume": "Développement et déploiement de deux applications métier sur Microsoft Power Platform (GCP Opposants, OSMOSe), de la conception à la mise en production.",
     "missions": [
       "Développement et déploiement d'applications métier en environnement de production",
       "Conception et automatisation de workflows pour optimiser les processus internes",
@@ -22,6 +24,8 @@
     "type": "Alternance",
     "periode": "Novembre 2022 – Août 2023",
     "localisation": "Saint-Pierre-des-Corps",
+    "projectId": "sncf-sav",
+    "resume": "Conception et déploiement d'un portail de gestion des demandes SAV (SAV_OPTER) sur Microsoft Power Platform, de la conception à la mise en production.",
     "missions": [
       "Développement d'une application de gestion des demandes après-vente, de la conception au déploiement",
       "Conception et gestion d'une base de données relationnelle",
