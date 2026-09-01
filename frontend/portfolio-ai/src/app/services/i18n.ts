@@ -41,8 +41,9 @@ const FR: Dict = {
 
   'siteAbout.label': 'À PROPOS DE CE SITE',
   'siteAbout.title': 'Comment ce portfolio est construit',
-  'siteAbout.text': "Ce site est une application complète, pensée comme un vrai produit plutôt qu'une simple vitrine statique. Le frontend est développé en Angular 21 et communique avec une API REST Spring Boot qui expose mon profil, mes compétences, mes expériences et mes projets. Il intègre un assistant conversationnel propulsé par l'API Claude d'Anthropic, capable de répondre en direct aux questions sur mon parcours, et il est entièrement bilingue français/anglais. Côté infrastructure, les deux applications sont conteneurisées avec Docker, testées et validées automatiquement à chaque push grâce à une pipeline d'intégration continue GitHub Actions, puis déployées en continu : le backend sur Railway, le frontend sur Vercel.",
+  'siteAbout.text': "Ce site n'a pas été fait avec un générateur de portfolio ou un site spécialisé : il est codé, hébergé et déployé de A à Z par mes propres moyens, comme une vraie application plutôt qu'une simple vitrine statique. Le frontend est développé en Angular 21 et communique avec une API REST Spring Boot qui expose mon profil, mes compétences, mes expériences et mes projets. Il intègre un assistant conversationnel propulsé par l'API Claude d'Anthropic, capable de répondre en direct aux questions sur mon parcours, et il est entièrement bilingue français/anglais. Côté infrastructure, les deux applications sont conteneurisées avec Docker, testées et validées automatiquement à chaque push grâce à une pipeline d'intégration continue GitHub Actions, puis déployées en continu : le backend sur Railway, le frontend sur Vercel.",
   'siteAbout.placeholder': "Schéma d'architecture à venir",
+  'siteAbout.repoLink': 'Voir le code source sur GitHub',
 
   'skills.label': 'COMPÉTENCES TECHNIQUES',
   'skills.title': 'Mon stack',
@@ -66,10 +67,11 @@ const FR: Dict = {
 
   'projects.label': 'PROJETS RÉALISÉS',
   'projects.title': 'Quelques projets',
+  'projects.viewProject': 'Voir le projet →',
 
   'devops.label': 'COULISSES TECHNIQUES',
   'devops.title': 'De Git à la production',
-  'devops.intro': "Ce portfolio n'est pas juste une vitrine : c'est aussi un vrai projet DevOps. Voici comment le code passe de mon poste à la production.",
+  'devops.intro': "Ce portfolio est aussi l'occasion de mettre en place un début de démarche DevOps : Docker pour reproduire fidèlement l'environnement dans lequel l'application va tourner, et GitHub Actions pour tester et vérifier automatiquement chaque déploiement avant qu'il n'arrive en production.",
   'devops.git.title': 'Versioning',
   'devops.git.desc': 'Un monorepo Git (frontend Angular + backend Spring Boot) versionné sur GitHub.',
   'devops.ci.title': 'Intégration continue',
@@ -78,6 +80,7 @@ const FR: Dict = {
   'devops.docker.desc': "Chaque service est packagé dans une image Docker via un build multi-stage.",
   'devops.deploy.title': 'Déploiement continu',
   'devops.deploy.desc': 'Le backend est déployé sur Railway et le frontend sur Vercel, automatiquement à chaque changement sur main.',
+  'devops.deploy.caption': "Les deux services se redéploient automatiquement à partir du même commit. Les secrets (comme la clé API Anthropic) sont stockés en variable d'environnement sur Railway, jamais dans le code.",
   'devops.placeholder': 'Illustration à venir',
 
   'footer.copyright': '© 2026 Kong-Meng Yang',
@@ -140,7 +143,8 @@ const EN: Dict = {
 
   'siteAbout.label': 'ABOUT THIS SITE',
   'siteAbout.title': 'How this portfolio is built',
-  'siteAbout.text': "This site is a full application, built like a real product rather than a static showcase. The frontend is built with Angular 21 and talks to a Spring Boot REST API exposing my profile, skills, experience and projects. It includes a conversational assistant powered by Anthropic's Claude API, able to answer questions about my background live, and the whole site is fully bilingual (French/English). On the infrastructure side, both applications are containerized with Docker, automatically built and tested on every push through a GitHub Actions CI pipeline, then continuously deployed: the backend on Railway, the frontend on Vercel.",
+  'siteAbout.text': "This site wasn't built with a portfolio generator or a specialized website builder: it's coded, hosted and deployed end-to-end by my own means, like a real application rather than a static showcase. The frontend is built with Angular 21 and talks to a Spring Boot REST API exposing my profile, skills, experience and projects. It includes a conversational assistant powered by Anthropic's Claude API, able to answer questions about my background live, and the whole site is fully bilingual (French/English). On the infrastructure side, both applications are containerized with Docker, automatically built and tested on every push through a GitHub Actions CI pipeline, then continuously deployed: the backend on Railway, the frontend on Vercel.",
+  'siteAbout.repoLink': 'View the source code on GitHub',
   'siteAbout.placeholder': 'Architecture diagram coming soon',
 
   'skills.label': 'TECHNICAL SKILLS',
@@ -165,10 +169,11 @@ const EN: Dict = {
 
   'projects.label': 'FEATURED PROJECTS',
   'projects.title': 'Some of my projects',
+  'projects.viewProject': 'View project →',
 
   'devops.label': 'BEHIND THE SCENES',
   'devops.title': 'From Git to production',
-  'devops.intro': "This portfolio isn't just a showcase — it's also a real DevOps project. Here's how the code goes from my machine to production.",
+  'devops.intro': "This portfolio has also been a chance to put in place the beginnings of a DevOps practice: Docker to faithfully reproduce the environment the app will run in, and GitHub Actions to automatically test and verify every deployment before it reaches production.",
   'devops.git.title': 'Versioning',
   'devops.git.desc': 'A Git monorepo (Angular frontend + Spring Boot backend) versioned on GitHub.',
   'devops.ci.title': 'Continuous Integration',
@@ -177,6 +182,7 @@ const EN: Dict = {
   'devops.docker.desc': 'Each service is packaged into a Docker image via a multi-stage build.',
   'devops.deploy.title': 'Continuous Deployment',
   'devops.deploy.desc': 'The backend is deployed on Railway and the frontend on Vercel, automatically on every change to main.',
+  'devops.deploy.caption': "Both services redeploy automatically from the same commit. Secrets (like the Anthropic API key) are stored as an environment variable on Railway, never in the code.",
   'devops.placeholder': 'Screenshot coming soon',
 
   'footer.copyright': '© 2026 Kong-Meng Yang',
