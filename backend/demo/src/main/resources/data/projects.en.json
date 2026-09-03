@@ -55,6 +55,23 @@
     "images": []
   },
   {
+    "id": "damage-detector",
+    "titre": "Insurance Damage Detector (AI)",
+    "description": "AI-powered image analysis app that identifies visible objects in a photo and estimates their damage, loss and replacement price — built to speed up insurance claims declarations.",
+    "technologies": ["React", "Node.js", "Express", "Claude Vision API"],
+    "github": "https://github.com/KomsLeDev/allmighty-dev",
+    "url": "https://allmighty-dev.fr/projects/damage-detector",
+    "detail": "Built outside the Angular/Spring Boot ecosystem used elsewhere in the portfolio, with a different stack: React on the frontend, Node.js/Express on the backend. The user submits a photo (claim, theft, natural disaster), analyzed by Anthropic's Claude vision API: each visible object is identified, its apparent damage assessed, and its replacement value estimated in euros. The API and frontend are deployed separately and connected to the main portfolio via a URL rewrite on Vercel.",
+    "role": "Solo developer, from design to production",
+    "contexte": "Personal project, built to explore a different stack (React/Node.js) and an AI use case applied to insurance.",
+    "resultats": [
+      "Working image analysis with automatic per-object damage and replacement price estimation",
+      "Node.js/Express API deployed on Railway, React frontend deployed on Vercel and exposed under /projects/damage-detector via a URL rewrite",
+      "Server-side file upload handled with Multer, calling Anthropic's Claude vision API"
+    ],
+    "images": []
+  },
+  {
     "id": "pandemic",
     "titre": "Pandemic",
     "description": "Collaborative web application built by a team of 3. Angular frontend, Spring Boot REST API, MongoDB database.",

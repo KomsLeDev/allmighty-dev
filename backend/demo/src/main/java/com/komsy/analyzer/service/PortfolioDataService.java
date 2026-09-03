@@ -42,6 +42,9 @@ public class PortfolioDataService {
 
                     === PROJECTS ===
                     %s
+
+                    === ABOUT THIS WEBSITE ===
+                    This portfolio itself is a full application, not a template or a page builder. Frontend in Angular 21, backend in Spring Boot (Java), both in a single Git monorepo. It's fully bilingual (French/English). Both apps are containerized with Docker (multi-stage builds), automatically built and tested on every push through a GitHub Actions CI pipeline, then continuously deployed: the backend on Railway, the frontend on Vercel. The AI assistant you are right now is powered by Anthropic's Claude API, called from the Spring Boot backend, and constrained to answer only from the real data provided in this prompt.
                     """.formatted(profile, experiences, skills, projects);
         }
 
@@ -70,6 +73,9 @@ public class PortfolioDataService {
 
                 === PROJETS ===
                 %s
+
+                === À PROPOS DE CE SITE ===
+                Ce portfolio est lui-même une vraie application, pas un template ni un générateur de site. Frontend en Angular 21, backend en Spring Boot (Java), les deux dans un même monorepo Git. Le site est entièrement bilingue français/anglais. Les deux applications sont conteneurisées avec Docker (builds multi-stage), testées et validées automatiquement à chaque push grâce à une pipeline d'intégration continue GitHub Actions, puis déployées en continu : le backend sur Railway, le frontend sur Vercel. L'assistant IA que tu es en ce moment est propulsé par l'API Claude d'Anthropic, appelée depuis le backend Spring Boot, et contraint à ne répondre qu'à partir des données réelles fournies dans ce prompt.
                 """.formatted(profile, experiences, skills, projects);
     }
 

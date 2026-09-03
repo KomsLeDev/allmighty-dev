@@ -3,6 +3,6 @@
   "backend": ["Java", "Spring Boot", "Node.js", "PHP", "API REST"],
   "base_de_donnees": ["MySQL", "MongoDB", "SQL"],
   "lowcode": ["Microsoft Power Apps", "Power Automate", "Power BI", "Power Platform"],
-  "outils": ["Git", "GitHub", "Docker", "Maven", "IntelliJ IDEA", "VS Code"],
+  "outils": ["Git", "GitHub", "Docker", "GitHub Actions", "CI/CD", "Maven", "IntelliJ IDEA", "VS Code"],
   "methodologies": ["Agile", "Scrum", "MVC"]
 }

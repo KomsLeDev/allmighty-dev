@@ -55,6 +55,23 @@
     "images": []
   },
   {
+    "id": "damage-detector",
+    "titre": "Détecteur de dégâts assurance (IA)",
+    "description": "Application d'analyse d'image par IA pour identifier les objets visibles sur une photo et estimer leurs dégâts, leur perte et leur prix de remplacement — pensée pour accélérer une déclaration de sinistre assurance.",
+    "technologies": ["React", "Node.js", "Express", "Claude Vision API"],
+    "github": "https://github.com/KomsLeDev/allmighty-dev",
+    "url": "https://allmighty-dev.fr/projects/damage-detector",
+    "detail": "Projet développé en dehors de l'écosystème Angular/Spring Boot du reste du portfolio, avec une stack différente : React côté frontend, Node.js/Express côté backend. L'utilisateur envoie une photo (sinistre, vol, catastrophe naturelle), qui est analysée par l'API de vision de Claude (Anthropic) : chaque objet visible est identifié, son dommage apparent évalué, et sa valeur de remplacement estimée en euros. L'API et le frontend sont déployés séparément et reliés au portfolio principal via une réécriture d'URL (rewrite) sur Vercel.",
+    "role": "Développeur solo, de la conception à la mise en production",
+    "contexte": "Projet personnel, développé pour explorer une stack différente (React/Node.js) et un cas d'usage IA appliqué à l'assurance.",
+    "resultats": [
+      "Analyse d'image fonctionnelle avec estimation automatique des dégâts et du prix de remplacement par objet",
+      "API Node.js/Express déployée sur Railway, frontend React déployé sur Vercel et exposé sous /projects/damage-detector via une réécriture d'URL",
+      "Upload de fichier géré côté serveur avec Multer, appel à l'API de vision Claude (Anthropic)"
+    ],
+    "images": []
+  },
+  {
     "id": "pandemic",
     "titre": "Pandemic",
     "description": "Application web collaborative développée en équipe de 3. Frontend Angular, API REST Spring Boot, base de données MongoDB.",
