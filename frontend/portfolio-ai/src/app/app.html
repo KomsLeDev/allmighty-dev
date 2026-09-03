@@ -248,23 +248,27 @@
 
   <!-- PROJET IA : DÉTECTEUR DE DÉGÂTS -->
 <section class="section damage-detector-section" id="damage-detector">
-  <p class="section-label">{{ i18n.t('damageDetector.label') }}</p>
-  <h2>{{ i18n.t('damageDetector.title') }}</h2>
-  <p class="damage-detector-text">{{ i18n.t('damageDetector.text') }}</p>
+  <div class="damage-detector-layout">
+    <div class="damage-detector-content">
+      <p class="section-label">{{ i18n.t('damageDetector.label') }}</p>
+      <h2>{{ i18n.t('damageDetector.title') }}</h2>
+      <p class="damage-detector-text">{{ i18n.t('damageDetector.text') }}</p>
 
-  <div class="damage-detector-tags">
-    <span>React</span>
-    <span>Node.js</span>
-    <span>Express</span>
-    <span>Claude Vision API</span>
-  </div>
+      <div class="damage-detector-tags">
+        <span>React</span>
+        <span>Node.js</span>
+        <span>Express</span>
+        <span>Claude Vision API</span>
+      </div>
 
-  <a class="repo-link-btn" [href]="damageDetectorUrl">
-    {{ i18n.t('damageDetector.cta') }}
-  </a>
+      <a class="repo-link-btn" [href]="damageDetectorUrl">
+        {{ i18n.t('damageDetector.cta') }}
+      </a>
+    </div>
 
-  <div class="architecture-image damage-detector-preview">
-    <img src="/damage_detector_preview.png" alt="Aperçu du détecteur de dégâts assurance">
+    <div class="damage-detector-preview">
+      <img src="/damage-img.png" alt="Aperçu du détecteur de dégâts assurance">
+    </div>
   </div>
 </section>
 

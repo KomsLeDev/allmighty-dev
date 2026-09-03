@@ -939,6 +939,7 @@ h1 {
   .project-grid { grid-template-columns: repeat(2, 1fr); }
   .pipeline { grid-template-columns: 1fr 1fr; }
   .pipeline-arrow { display: none; }
+  .damage-detector-layout { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -970,13 +971,19 @@ h1 {
 
 .damage-detector-section { background: #f8fafc; }
 
+.damage-detector-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  align-items: start;
+}
+
 .damage-detector-text {
   color: #475569;
   font-size: 16px;
   line-height: 1.75;
   margin-top: -22px;
   margin-bottom: 20px;
-  max-width: 760px;
 }
 
 .damage-detector-tags {
@@ -996,5 +1003,12 @@ h1 {
 }
 
 .damage-detector-preview {
-  margin-top: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5eaf0;
+  box-shadow: 0 6px 24px rgba(15,23,42,0.08);
+}
+.damage-detector-preview img {
+  width: 100%;
+  display: block;
 }

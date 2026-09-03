@@ -1,3 +1,6 @@
+import { useEffect, useRef } from 'react';
+import { colorForIndex } from '../utils/objectColors';
+
 function getDamageClass(damage) {
   const normalized = damage.toLowerCase();
   if (normalized.includes('aucun')) return 'aucun';
@@ -11,7 +14,14 @@ function formatPrice(value) {
   return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
 }
 
-function AnalysisResults({ analysis }) {
+function AnalysisResults({ analysis, selectedIndex, onSelect }) {
+  const rowRefs = useRef([]);
+
+  useEffect(() => {
+    if (selectedIndex == null) return;
+    rowRefs.current[selectedIndex]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, [selectedIndex]);
+
   if (!analysis) return null;
 
   const total = analysis.objects.reduce((sum, obj) => sum + (obj.estimatedValue || 0), 0);
@@ -21,7 +31,15 @@ function AnalysisResults({ analysis }) {
       <h2>Résultats de l'analyse</h2>
       <div className="results-grid">
         {analysis.objects.map((obj, index) => (
-          <div key={index} className="result-item">
+          <div
+            key={index}
+            ref={(el) => (rowRefs.current[index] = el)}
+            className={`result-item${selectedIndex === index ? ' result-item--active' : ''}`}
+            onClick={() => onSelect(index)}
+          >
+            <span className="result-number" style={{ backgroundColor: colorForIndex(index) }}>
+              {index + 1}
+            </span>
             <div className="result-info">
               <strong>{obj.name}</strong>
               <p className="result-description">{obj.description}</p>

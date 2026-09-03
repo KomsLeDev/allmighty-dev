@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ImageUploader from './components/ImageUploader';
 import ImagePreview from './components/ImagePreview';
+import AnnotatedImage from './components/AnnotatedImage';
 import AnalysisResults from './components/AnalysisResults';
 import { useDamageAnalysis } from './hooks/useDamageAnalysis';
 import './App.css';
@@ -8,11 +9,13 @@ import './App.css';
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const { analysis, loading, error, runAnalysis } = useDamageAnalysis();
 
   const handleFileSelect = (file) => {
     setSelectedFile(file);
     setPreview(URL.createObjectURL(file));
+    setSelectedIndex(null);
   };
 
   return (
@@ -31,7 +34,17 @@ function App() {
 
       <div className="card upload-zone">
         <ImageUploader onFileSelect={handleFileSelect} />
-        <ImagePreview src={preview} />
+
+        {analysis ? (
+          <AnnotatedImage
+            src={preview}
+            objects={analysis.objects}
+            selectedIndex={selectedIndex}
+            onSelect={setSelectedIndex}
+          />
+        ) : (
+          <ImagePreview src={preview} />
+        )}
 
         {selectedFile && (
           <button
@@ -46,7 +59,7 @@ function App() {
         {error && <p className="error-message">{error}</p>}
       </div>
 
-      <AnalysisResults analysis={analysis} />
+      <AnalysisResults analysis={analysis} selectedIndex={selectedIndex} onSelect={setSelectedIndex} />
     </div>
   );
 }
