@@ -5,10 +5,11 @@
     <div class="logo">YKM<span>.</span></div>
     <div class="nav-links">
       <a href="#about" (click)="scrollToSection('about', $event)">{{ i18n.t('nav.about') }}</a>
+      <a href="#devops" (click)="scrollToSection('devops', $event)">{{ i18n.t('nav.devops') }}</a>
       <a href="#skills" (click)="scrollToSection('skills', $event)">{{ i18n.t('nav.skills') }}</a>
       <a href="#experience" (click)="scrollToSection('experience', $event)">{{ i18n.t('nav.experience') }}</a>
       <a href="#projects" (click)="scrollToSection('projects', $event)">{{ i18n.t('nav.projects') }}</a>
-      <a href="#devops" (click)="scrollToSection('devops', $event)">{{ i18n.t('nav.devops') }}</a>
+      <a href="#damage-detector" (click)="scrollToSection('damage-detector', $event)">{{ i18n.t('nav.damageDetector') }}</a>
       <div class="lang-switch">
         <button [class.active]="i18n.lang() === 'fr'" (click)="switchLang('fr')">FR</button>
         <button [class.active]="i18n.lang() === 'en'" (click)="switchLang('en')">EN</button>
@@ -28,9 +29,11 @@
       <p class="availability"><span class="dot"></span> {{ i18n.t('hero.availability') }}</p>
       <h1>Yang<br />Kong-Meng</h1>
       <p class="subtitle">{{ i18n.t('hero.subtitle') }}</p>
+      <p class="speciality speciality--primary">
+        {{ i18n.t('hero.specialityPrefix') }} <strong>Angular</strong> {{ i18n.t('hero.specialityAnd') }} <strong>Spring Boot</strong>
+      </p>
       <p class="speciality">
-        {{ i18n.t('hero.specialityPrefix') }} <strong>Angular</strong>, <strong>React</strong>,
-        <strong>Node.js</strong> {{ i18n.t('hero.specialityAnd') }} <strong>Spring Boot</strong>
+        {{ i18n.t('hero.secondaryPrefix') }} <strong>React</strong> {{ i18n.t('hero.secondaryAnd') }} <strong>Node.js</strong>{{ i18n.t('hero.devopsNote') }}
       </p>
       <div class="chips">
         <span>SNCF</span>
@@ -242,6 +245,28 @@
       </div>
     </div>
   </section>
+
+  <!-- PROJET IA : DÉTECTEUR DE DÉGÂTS -->
+<section class="section damage-detector-section" id="damage-detector">
+  <p class="section-label">{{ i18n.t('damageDetector.label') }}</p>
+  <h2>{{ i18n.t('damageDetector.title') }}</h2>
+  <p class="damage-detector-text">{{ i18n.t('damageDetector.text') }}</p>
+
+  <div class="damage-detector-tags">
+    <span>React</span>
+    <span>Node.js</span>
+    <span>Express</span>
+    <span>Claude Vision API</span>
+  </div>
+
+  <a class="repo-link-btn" [href]="damageDetectorUrl">
+    {{ i18n.t('damageDetector.cta') }}
+  </a>
+
+  <div class="architecture-image damage-detector-preview">
+    <img src="/damage_detector_preview.png" alt="Aperçu du détecteur de dégâts assurance">
+  </div>
+</section>
 
   <!-- COMPÉTENCES -->
   <section class="section skills-section" id="skills">

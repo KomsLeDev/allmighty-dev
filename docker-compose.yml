@@ -12,3 +12,17 @@ services:
       - "8081:80"
     depends_on:
       - backend
+
+  damage-detector-api:
+    build: ./damage-detector-api
+    ports:
+      - "3001:3001"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+
+  damage-detector-app:
+    build: ./damage-detector-app
+    ports:
+      - "5173:5173"
+    depends_on:
+      - damage-detector-api

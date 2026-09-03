@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { I18nService } from './i18n';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortfolioService {
-  private apiUrl = /*'http://localhost:8080/api'*/'https://allmighty-dev-production.up.railway.app/api';
+  private apiUrl = environment.apiUrl;
   private i18n = inject(I18nService);
 
   constructor(private http: HttpClient) {}

@@ -144,6 +144,7 @@ h1 {
   font-size: 16px;
   margin-bottom: 28px;
 }
+.speciality--primary { margin-bottom: 4px; }
 .speciality strong { color: #334155; }
 
 .chips {
@@ -966,3 +967,34 @@ h1 {
 
 /* Une seule identité visuelle de marque pour toutes les cartes projet */
 .project-image { background: linear-gradient(135deg, #0b1324, #1d4ed8); }
+
+.damage-detector-section { background: #f8fafc; }
+
+.damage-detector-text {
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.75;
+  margin-top: -22px;
+  margin-bottom: 20px;
+  max-width: 760px;
+}
+
+.damage-detector-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.damage-detector-tags span {
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.damage-detector-preview {
+  margin-top: 24px;
+}

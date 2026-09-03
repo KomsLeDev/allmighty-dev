@@ -4,6 +4,7 @@ import { I18nService, Lang } from './services/i18n';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
+import { environment } from '../environments/environment';
 
 interface Message {
   from: 'user' | 'bot';
@@ -31,6 +32,7 @@ export class App implements OnInit, AfterViewChecked {
   robotMood: 'idle' | 'thinking' | 'talking' = 'idle';
   chatExpanded = false;
   zoomedImage: string | null = null;
+  damageDetectorUrl = environment.damageDetectorUrl;
 
   messages: Message[] = [];
 
