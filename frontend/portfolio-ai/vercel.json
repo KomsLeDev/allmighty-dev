@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/projects/damage-detector/:path*",
-      "destination": "https://allmighty-dev-detector.vercel.app/"
+      "destination": "https://allmighty-dev-detector.vercel.app/:path*"
     }
   ]
 }
