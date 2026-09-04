@@ -39,3 +39,48 @@ jobs:
         env:
           ANTHROPIC_API_KEY: dummy-ci-key
       - run: mvn package -DskipTests -B
+
+  damage-detector-api:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: damage-detector-api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: damage-detector-api/package-lock.json
+      - run: npm ci
+      - run: npm test
+
+  damage-detector-app:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: damage-detector-app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: damage-detector-app/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+
+  deploy-portfolio:
+    needs: [frontend, backend]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_PORTFOLIO }}"
+
+  deploy-damage-detector:
+    needs: [damage-detector-api, damage-detector-app]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_DAMAGE_DETECTOR }}"
