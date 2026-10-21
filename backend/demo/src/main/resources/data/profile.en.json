@@ -1,8 +1,8 @@
 {
   "name": "Kong-Meng Yang",
-  "role": "Fullstack Web Developer",
-  "localisation": "Vienne-en-Val / Orléans (France)",
-  "disponibilite": "Available immediately",
+  "role": "Full Stack Developer — training in Cybersecurity (RS7394), aiming for Application Security (AppSec) / DevSecOps",
+  "localisation": "Orléans, Centre-Val de Loire, France",
+  "disponibilite": "Seeking a 4-week internship (140h) from February 15 to March 12, 2027",
   "github": "https://github.com/KomsLeDev",
   "portfolio": "https://allmighty-dev.fr",
   "formation": {
@@ -11,5 +11,11 @@
     "annee": "2025",
     "details": "Work-study program focused on web development, project management and information systems"
   },
-  "resume": "Fullstack web developer with a Master's degree (MIAGE) from the University of Orléans. Two years of work-study experience in demanding professional environments (SNCF, CARSAT). Proficient in Angular and React on the frontend, Spring Boot and Node.js on the backend, as well as Microsoft Power Platform low-code tools. Looking for a full-time position in the Centre-Val de Loire region (France) or remote."
+  "formationEnCours": {
+    "diplome": "Cybersecurity Specialist — RS7394 Certification (Penetration Testing)",
+    "etablissement": "M2i / Skolae, Orléans",
+    "periode": "2026 – 2027 (in progress)",
+    "details": "Currently training: penetration testing methodology, web and network hacking, Python for security, system hardening, EBIOS RM risk analysis, SOC and SIEM basics (Splunk). TryHackMe Pre Security path in progress. 140h internship to complete from February 15 to March 12, 2027."
+  },
+  "resume": "Full Stack Java/Angular developer (Master's degree, MIAGE), with two years of professional experience (SNCF, CARSAT) and hands-on continuous deployment practice. Currently training as a Cybersecurity Specialist (RS7394) until March 2027, aiming for a role in application security (AppSec) or DevSecOps. Seeking a 4-week internship (140h) from February 15 to March 12, 2027."
 }

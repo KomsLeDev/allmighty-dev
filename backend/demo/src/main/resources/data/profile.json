@@ -1,8 +1,8 @@
 {
   "name": "Kong-Meng Yang",
-  "role": "Développeur Web Fullstack",
-  "localisation": "Vienne-en-Val / Orléans (45)",
-  "disponibilite": "Disponible immédiatement",
+  "role": "Développeur Full Stack — en formation Cybersécurité (RS7394), objectif sécurité applicative (AppSec) / DevSecOps",
+  "localisation": "Orléans, Centre-Val de Loire",
+  "disponibilite": "Recherche un stage de 4 semaines (140h) du 15 février au 12 mars 2027",
   "github": "https://github.com/KomsLeDev",
   "portfolio": "https://allmighty-dev.fr",
   "formation": {
@@ -11,5 +11,11 @@
     "annee": "2025",
     "details": "Formation en alternance orientée développement web, gestion de projet et systèmes d'information"
   },
-  "resume": "Développeur web fullstack diplômé d'un Master MIAGE de l'Université d'Orléans. Deux ans d'alternance dans des environnements professionnels exigeants (SNCF, CARSAT). Maîtrise du développement frontend Angular et React, du backend Spring Boot et Node.js, ainsi que des outils low-code Microsoft Power Platform. À la recherche d'un poste en CDI dans la région Centre-Val de Loire ou en télétravail."
+  "formationEnCours": {
+    "diplome": "Spécialiste Cybersécurité — Certification RS7394 (Tests d'intrusion / Pentesting)",
+    "etablissement": "M2i / Skolae, Orléans",
+    "periode": "2026 – 2027 (en cours)",
+    "details": "Formation en cours : méthodologie de test d'intrusion, hacking web et réseau, Python pour la sécurité, durcissement des systèmes, analyse de risques EBIOS RM, bases du SOC et du SIEM (Splunk). Parcours TryHackMe Pre Security en cours. Stage de 140h à réaliser du 15 février au 12 mars 2027."
+  },
+  "resume": "Développeur Full Stack Java/Angular (Master MIAGE), avec deux ans d'expérience en environnement professionnel (SNCF, CARSAT) et une pratique du déploiement continu. En formation Spécialiste Cybersécurité (RS7394) jusqu'en mars 2027, avec pour objectif un poste en sécurité applicative (AppSec) ou DevSecOps. Recherche un stage de 4 semaines (140h) du 15 février au 12 mars 2027."
 }

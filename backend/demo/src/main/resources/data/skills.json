@@ -1,4 +1,5 @@
 {
+  "cybersecurite": ["TryHackMe – Pre Security", "TCP/IP & OSI", "Linux & Windows", "Pentesting", "Python", "Hardening", "EBIOS RM", "SOC / SIEM (Splunk)", "CORS", "Secrets management"],
   "frontend": ["Angular", "React", "TypeScript", "JavaScript", "HTML", "CSS"],
   "backend": ["Java", "Spring Boot", "Node.js", "PHP", "API REST"],
   "base_de_donnees": ["MySQL", "MongoDB", "SQL"],

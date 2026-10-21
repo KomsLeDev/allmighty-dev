@@ -35,11 +35,14 @@
       <p class="speciality">
         {{ i18n.t('hero.secondaryPrefix') }} <strong>React</strong> {{ i18n.t('hero.secondaryAnd') }} <strong>Node.js</strong>{{ i18n.t('hero.devopsNote') }}
       </p>
+      <p class="speciality">
+        {{ i18n.t('hero.cyberNote') }}
+      </p>
       <div class="chips">
         <span>SNCF</span>
         <span>CARSAT</span>
         <span>Power Platform</span>
-        <span>Fullstack</span>
+        <span>{{ i18n.t('hero.cyberChip') }}</span>
       </div>
       <div class="hero-actions">
         <a class="primary-btn" href="#experience" (click)="scrollToSection('experience', $event)">{{ i18n.t('hero.viewPath') }}</a>
@@ -291,6 +294,34 @@
     <p class="section-label">{{ i18n.t('experience.label') }}</p>
     <h2>{{ i18n.t('experience.title') }}</h2>
     <div class="timeline">
+      <!-- Formation en cours : Cybersécurité -->
+      <div class="timeline-item">
+        <div class="timeline-dot timeline-dot--edu"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3>{{ i18n.t('cyberFormation.title') }}</h3>
+              <p class="timeline-company">
+                <strong>{{ i18n.t('cyberFormation.school') }}</strong>
+                <span class="badge badge--edu">{{ i18n.t('cyberFormation.badge') }}</span>
+              </p>
+            </div>
+            <div class="timeline-meta">
+              <span class="timeline-period">{{ i18n.t('cyberFormation.period') }}</span>
+              <span class="timeline-location">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                {{ i18n.t('cyberFormation.location') }}
+              </span>
+            </div>
+          </div>
+          <ul class="timeline-missions">
+            <li>{{ i18n.t('cyberFormation.mission1') }}</li>
+            <li>{{ i18n.t('cyberFormation.mission2') }}</li>
+            <li>{{ i18n.t('cyberFormation.mission3') }}</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="timeline-item" *ngFor="let exp of experiences">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
