@@ -1041,15 +1041,10 @@ h1 {
   margin-bottom: 36px;
 }
 
-.labs-badge-link {
+.tryhackme-badge-container {
   display: flex;
-  line-height: 0;
-}
-
-.tryhackme-badge {
-  height: 70px;
-  width: auto;
-  border-radius: 8px;
+  align-items: center;
+  min-height: 70px;
 }
 
 .labs-linkedin-link {

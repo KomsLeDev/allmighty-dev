@@ -1,7 +1,7 @@
-import { Component, OnInit, AfterViewChecked, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterViewChecked, ElementRef, ViewChild, ChangeDetectorRef, PLATFORM_ID, inject } from '@angular/core';
 import { PortfolioService } from './services/portfolio';
 import { I18nService, Lang } from './services/i18n';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { environment } from '../environments/environment';
@@ -19,9 +19,12 @@ interface Message {
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit, AfterViewChecked {
+export class App implements OnInit, AfterViewInit, AfterViewChecked {
+
+  private platformId = inject(PLATFORM_ID);
 
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
+  @ViewChild('tryhackmeBadge') tryhackmeBadge!: ElementRef<HTMLDivElement>;
 
   profile: any = null;
   projects: any[] = [];
@@ -51,6 +54,16 @@ export class App implements OnInit, AfterViewChecked {
       this.messages = [{ from: 'bot', text: this.i18n.t('chat.greeting'), time: this.currentTime() }];
       this.loadData();
     });
+  }
+
+  ngAfterViewInit(): void {
+    // Script tiers (badge TryHackMe) : uniquement côté navigateur, jamais pendant le pré-rendu côté serveur.
+    if (isPlatformBrowser(this.platformId) && this.tryhackmeBadge) {
+      const script = document.createElement('script');
+      script.src = 'https://tryhackme.com/badge/t/eb2dab6412e6c2e771bae98367a3d0d4811123d2fc6d6a02c58deaed2e40b4b5aa1619da7366a5b129d4a71fc642433e?theme=dark';
+      script.async = true;
+      this.tryhackmeBadge.nativeElement.appendChild(script);
+    }
   }
 
   loadData(): void {

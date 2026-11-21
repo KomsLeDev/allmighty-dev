@@ -282,9 +282,7 @@
     <p class="labs-intro">{{ i18n.t('labs.intro') }}</p>
 
     <div class="labs-badges">
-      <a href="https://tryhackme.com/p/komsyang" target="_blank" rel="noopener" class="labs-badge-link">
-        <img src="https://tryhackme-badges.s3.amazonaws.com/komsyang.png" alt="Badge de profil TryHackMe de Kong-Meng Yang" class="tryhackme-badge">
-      </a>
+      <div #tryhackmeBadge class="tryhackme-badge-container"></div>
       <a *ngIf="profile?.linkedin" [href]="profile.linkedin" target="_blank" rel="noopener" class="secondary-btn labs-linkedin-link">
         {{ i18n.t('labs.linkedinLearning') }}
       </a>
