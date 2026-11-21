@@ -1,4 +1,6 @@
 .project-page {
+  --font-display: 'Space Grotesk', 'Inter', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   min-height: 100vh;
   background: #f8fafc;
   font-family: 'Inter', Arial, sans-serif;
@@ -17,7 +19,7 @@
   top: 0;
   z-index: 100;
 }
-.logo { font-size: 22px; font-weight: 800; color: #ffffff; cursor: pointer; }
+.logo { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #ffffff; cursor: pointer; }
 .logo span { color: #60a5fa; }
 
 .lang-switch {
@@ -74,8 +76,9 @@
   margin-bottom: 20px;
 }
 .project-tech-badges span {
-  font-size: 12px;
-  font-weight: 700;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
   padding: 4px 12px;
   background: rgba(255,255,255,0.2);
   color: white;
@@ -84,8 +87,9 @@
 }
 
 .project-hero-content h1 {
+  font-family: var(--font-display);
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 700;
   color: white;
   letter-spacing: -2px;
   line-height: 1;
@@ -141,8 +145,9 @@
 }
 
 .project-section h2 {
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 16px;
   color: #071127;
 }
@@ -216,12 +221,13 @@
   gap: 12px;
 }
 .tech-card {
+  font-family: var(--font-mono);
   background: white;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
   padding: 12px 20px;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 13px;
   color: #334155;
   box-shadow: 0 2px 8px rgba(15,23,42,0.06);
   transition: all 0.2s;

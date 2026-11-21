@@ -1,4 +1,6 @@
 .project-page {
+  --font-display: 'Space Grotesk', 'Inter', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   min-height: 100vh;
   background: #f8fafc;
   font-family: 'Inter', Arial, sans-serif;
@@ -16,7 +18,7 @@
   top: 0;
   z-index: 100;
 }
-.logo { font-size: 22px; font-weight: 800; color: #ffffff; cursor: pointer; }
+.logo { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: #ffffff; cursor: pointer; }
 .logo span { color: #60a5fa; }
 
 .lang-switch {
@@ -59,16 +61,18 @@
 }
 .sec-hero-content { max-width: 760px; }
 .sec-hero-label {
+  font-family: var(--font-mono);
   color: rgba(255,255,255,0.7);
-  font-weight: 800;
+  font-weight: 500;
   font-size: 12px;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.4px;
   margin-bottom: 14px;
 }
 .sec-hero h1 {
+  font-family: var(--font-display);
   color: white;
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -1px;
   line-height: 1.1;
   margin-bottom: 16px;
@@ -89,8 +93,9 @@
 }
 
 .sec-section h2 {
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 14px;
 }
 .sec-section p {
@@ -176,7 +181,7 @@
   padding: 16px 18px;
   box-shadow: 0 2px 8px rgba(15,23,42,0.06);
 }
-.sec-tool-card strong { display: block; font-size: 14px; margin-bottom: 4px; color: #0f172a; }
+.sec-tool-card strong { font-family: var(--font-mono); display: block; font-size: 13.5px; margin-bottom: 4px; color: #0f172a; }
 .sec-tool-card span { font-size: 13px; color: #64748b; line-height: 1.5; }
 
 .project-footer-bar {
