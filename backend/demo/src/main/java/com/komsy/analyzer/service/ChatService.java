@@ -11,9 +11,18 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 @Service
 public class ChatService {
+
+    // Détection basique (non bloquante) de tentatives d'injection de prompt, à des fins de supervision.
+    // Ce n'est pas une protection complète : le vrai rempart reste la séparation system/user et le prompt
+    // contraint construit par PortfolioDataService.
+    private static final Pattern INJECTION_PATTERN = Pattern.compile(
+        "ignore (all |previous |the )*instructions|system prompt|disregard (the )?(above|previous)|you are now|forget (your|all) (previous )?instructions",
+        Pattern.CASE_INSENSITIVE
+    );
 
     @Value("${anthropic.api.key}")
     private String apiKey;
@@ -38,6 +47,10 @@ public class ChatService {
             return isEnglish
                 ? "Ask me a question about Kong-Meng's background, skills or projects."
                 : "Posez-moi une question sur le parcours, les compétences ou les projets de Kong-Meng.";
+        }
+
+        if (INJECTION_PATTERN.matcher(userMessage).find()) {
+            System.out.println("Tentative potentielle d'injection de prompt detectee : " + userMessage);
         }
 
         try {
