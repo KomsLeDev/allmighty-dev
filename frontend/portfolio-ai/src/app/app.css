@@ -484,6 +484,13 @@ h1 {
 }
 .repo-link-btn:hover { opacity: 0.85; }
 
+.devops-case-study-link {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
 .architecture-image {
   border: 1px solid #e5eaf0;
   border-radius: 12px;

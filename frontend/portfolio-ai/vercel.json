@@ -3,6 +3,10 @@
     {
       "source": "/projects/damage-detector/:path*",
       "destination": "https://allmighty-dev-detector.vercel.app/:path*"
+    },
+    {
+      "source": "/((?!fr|en).*)",
+      "destination": "/index.csr.html"
     }
   ],
   "headers": [

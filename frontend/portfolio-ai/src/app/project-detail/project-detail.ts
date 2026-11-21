@@ -23,8 +23,8 @@ export class ProjectDetail implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.route.data.subscribe(data => this.i18n.sync(data['lang'] as string));
     this.route.paramMap.subscribe(params => {
-      this.i18n.sync(params.get('lang'));
       const id = params.get('id');
       this.loadProject(id);
     });

@@ -1,26 +1,23 @@
-import { Routes, UrlMatcher, UrlSegment, Route } from '@angular/router';
+import { Routes } from '@angular/router';
 
-const langMatcher: UrlMatcher = (segments: UrlSegment[]) => {
-  if (segments.length > 0 && (segments[0].path === 'fr' || segments[0].path === 'en')) {
-    return { consumed: [segments[0]], posParams: { lang: segments[0] } };
+const children = [
+  {
+    path: '',
+    loadComponent: () => import('./app').then(m => m.App)
+  },
+  {
+    path: 'projet/:id',
+    loadComponent: () => import('./project-detail/project-detail').then(m => m.ProjectDetail)
+  },
+  {
+    path: 'securite',
+    loadComponent: () => import('./security-case-study/security-case-study').then(m => m.SecurityCaseStudy)
   }
-  return null;
-};
+];
 
 export const routes: Routes = [
-  {
-    matcher: langMatcher,
-    children: [
-      {
-        path: '',
-        loadComponent: () => import('./app').then(m => m.App)
-      },
-      {
-        path: 'projet/:id',
-        loadComponent: () => import('./project-detail/project-detail').then(m => m.ProjectDetail)
-      }
-    ]
-  } as Route,
+  { path: 'fr', data: { lang: 'fr' }, children },
+  { path: 'en', data: { lang: 'en' }, children },
   {
     path: '**',
     loadComponent: () => import('./lang-redirect').then(m => m.LangRedirect)

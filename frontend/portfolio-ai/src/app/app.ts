@@ -46,8 +46,8 @@ export class App implements OnInit, AfterViewChecked {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.i18n.sync(params.get('lang'));
+    this.route.data.subscribe(data => {
+      this.i18n.sync(data['lang'] as string);
       this.messages = [{ from: 'bot', text: this.i18n.t('chat.greeting'), time: this.currentTime() }];
       this.loadData();
     });
@@ -58,35 +58,40 @@ export class App implements OnInit, AfterViewChecked {
       next: (data: any) => {
         this.profile = data;
         this.cdr.detectChanges();
-      }
+      },
+      error: (err) => console.error('Erreur lors du chargement du profil :', err)
     });
 
     this.portfolioService.getProjects().subscribe({
       next: (data: any) => {
         this.projects = data as any[];
         this.cdr.detectChanges();
-      }
+      },
+      error: (err) => console.error('Erreur lors du chargement des projets :', err)
     });
 
     this.portfolioService.getSkills().subscribe({
       next: (data: any) => {
         this.skills = data;
         this.cdr.detectChanges();
-      }
+      },
+      error: (err) => console.error('Erreur lors du chargement des compétences :', err)
     });
 
     this.portfolioService.getExperiences().subscribe({
       next: (data: any) => {
         this.experiences = data as any[];
         this.cdr.detectChanges();
-      }
+      },
+      error: (err) => console.error('Erreur lors du chargement des expériences :', err)
     });
 
     this.portfolioService.getLabs().subscribe({
       next: (data: any) => {
         this.labs = data as any[];
         this.cdr.detectChanges();
-      }
+      },
+      error: (err) => console.error('Erreur lors du chargement des labs :', err)
     });
   }
 
@@ -198,5 +203,9 @@ export class App implements OnInit, AfterViewChecked {
 
   goToProject(projectId: string): void {
     this.router.navigate(['/', this.i18n.lang(), 'projet', projectId]);
+  }
+
+  goToSecurityCaseStudy(): void {
+    this.router.navigate(['/', this.i18n.lang(), 'securite']);
   }
 }
