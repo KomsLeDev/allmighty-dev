@@ -940,6 +940,7 @@ h1 {
   .pipeline { grid-template-columns: 1fr 1fr; }
   .pipeline-arrow { display: none; }
   .damage-detector-layout { grid-template-columns: 1fr; }
+  .labs-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -957,6 +958,7 @@ h1 {
   .timeline-header { flex-direction: column; gap: 8px; }
   .timeline-meta { align-items: flex-start; }
   .pipeline { grid-template-columns: 1fr; }
+  .labs-grid { grid-template-columns: 1fr; }
 }
 
 /* Status chat header */
@@ -1011,4 +1013,125 @@ h1 {
 .damage-detector-preview img {
   width: 100%;
   display: block;
+}
+
+/* ─── LABS / WRITE-UPS ─── */
+.labs-section { background: white; }
+
+.labs-intro {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 720px;
+  margin-top: -22px;
+  margin-bottom: 28px;
+}
+
+.labs-badges {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.labs-badge-link {
+  display: flex;
+  line-height: 0;
+}
+
+.tryhackme-badge {
+  height: 70px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.labs-linkedin-link {
+  height: 44px;
+  padding: 0 20px;
+  font-size: 13px;
+}
+
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.lab-card {
+  background: white;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(15,23,42,0.06);
+}
+
+.lab-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.lab-platform {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #2563eb;
+}
+
+.lab-difficulty {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.lab-card h3 { font-size: 15px; font-weight: 800; margin-bottom: 10px; }
+
+.lab-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.lab-skills span {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  background: #f1f5f9;
+  border-radius: 999px;
+  color: #475569;
+}
+
+.lab-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+}
+.lab-link:hover { text-decoration: underline; }
+
+.labs-empty {
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
+  color: #94a3b8;
+}
+.labs-empty svg { margin-bottom: 12px; }
+.labs-empty-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 6px;
+}
+.labs-empty-text {
+  font-size: 13px;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
 }

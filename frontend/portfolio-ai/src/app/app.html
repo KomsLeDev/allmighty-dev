@@ -10,6 +10,7 @@
       <a href="#experience" (click)="scrollToSection('experience', $event)">{{ i18n.t('nav.experience') }}</a>
       <a href="#projects" (click)="scrollToSection('projects', $event)">{{ i18n.t('nav.projects') }}</a>
       <a href="#damage-detector" (click)="scrollToSection('damage-detector', $event)">{{ i18n.t('nav.damageDetector') }}</a>
+      <a href="#labs" (click)="scrollToSection('labs', $event)">{{ i18n.t('nav.labs') }}</a>
       <div class="lang-switch">
         <button [class.active]="i18n.lang() === 'fr'" (click)="switchLang('fr')">FR</button>
         <button [class.active]="i18n.lang() === 'en'" (click)="switchLang('en')">EN</button>
@@ -281,6 +282,42 @@
     </div>
   </div>
 </section>
+
+  <!-- LABS / WRITE-UPS -->
+  <section class="section labs-section" id="labs">
+    <p class="section-label">{{ i18n.t('labs.label') }}</p>
+    <h2>{{ i18n.t('labs.title') }}</h2>
+    <p class="labs-intro">{{ i18n.t('labs.intro') }}</p>
+
+    <div class="labs-badges">
+      <a href="https://tryhackme.com/p/komsyang" target="_blank" rel="noopener" class="labs-badge-link">
+        <img src="https://tryhackme-badges.s3.amazonaws.com/komsyang.png" alt="Badge de profil TryHackMe de Kong-Meng Yang" class="tryhackme-badge">
+      </a>
+      <a *ngIf="profile?.linkedin" [href]="profile.linkedin" target="_blank" rel="noopener" class="secondary-btn labs-linkedin-link">
+        {{ i18n.t('labs.linkedinLearning') }}
+      </a>
+    </div>
+
+    <div class="labs-grid" *ngIf="labs && labs.length > 0">
+      <article class="lab-card" *ngFor="let lab of labs">
+        <div class="lab-card-header">
+          <span class="lab-platform">{{ lab.plateforme }}</span>
+          <span class="lab-difficulty">{{ lab.difficulte }}</span>
+        </div>
+        <h3>{{ lab.titre }}</h3>
+        <div class="lab-skills">
+          <span *ngFor="let competence of lab.competences">{{ competence }}</span>
+        </div>
+        <a [href]="lab.lien" target="_blank" rel="noopener" class="lab-link">{{ i18n.t('labs.viewWriteup') }}</a>
+      </article>
+    </div>
+
+    <div class="labs-empty" *ngIf="!labs || labs.length === 0">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      <p class="labs-empty-title">{{ i18n.t('labs.emptyTitle') }}</p>
+      <p class="labs-empty-text">{{ i18n.t('labs.emptyText') }}</p>
+    </div>
+  </section>
 
   <!-- COMPÉTENCES -->
   <section class="section skills-section" id="skills">

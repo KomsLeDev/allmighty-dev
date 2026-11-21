@@ -32,6 +32,10 @@ export class PortfolioService {
     return this.http.get(`${this.apiUrl}/experiences`, { params: { lang: this.lang } });
   }
 
+  getLabs() {
+    return this.http.get(`${this.apiUrl}/labs`, { params: { lang: this.lang } });
+  }
+
   sendMessage(message: string) {
     return this.http.post(`${this.apiUrl}/chat`, { message, lang: this.lang });
   }

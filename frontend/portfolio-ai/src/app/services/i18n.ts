@@ -12,6 +12,7 @@ const FR: Dict = {
   'nav.projects': 'PROJETS',
   'nav.devops': 'DEVOPS',
   'nav.damageDetector': 'PROJET IA',
+  'nav.labs': 'LABS',
   'nav.github': 'GITHUB',
 
   'hero.availability': 'RECHERCHE STAGE · 15 FÉV – 12 MARS 2027',
@@ -91,6 +92,14 @@ const FR: Dict = {
   'damageDetector.text': "Pour sortir de l'écosystème Angular/Spring Boot utilisé dans le reste de ce portfolio, j'ai développé ce projet avec une autre stack : React côté frontend, Node.js/Express côté backend. L'application s'appuie sur l'IA pour analyser une photo, détecter les objets visibles et estimer les dégâts, la perte et le prix des biens concernés — un cas d'usage pensé notamment pour le secteur de l'assurance, où ça peut accélérer et fiabiliser l'évaluation d'un sinistre.",
   'damageDetector.cta': 'Voir le projet',
 
+  'labs.label': 'ENTRAÎNEMENT CYBERSÉCURITÉ',
+  'labs.title': 'Labs & Write-ups',
+  'labs.intro': "Ma progression en formation RS7394, documentée au fil de l'eau : salles TryHackMe, machines HackTheBox/Root-Me, CTF et TP du cursus M2i. Chaque write-up détaille la méthodologie suivie, pas juste le résultat.",
+  'labs.linkedinLearning': 'Voir mes certifications LinkedIn Learning',
+  'labs.viewWriteup': 'Voir le write-up →',
+  'labs.emptyTitle': 'Premiers write-ups en cours de rédaction',
+  'labs.emptyText': "Cette section s'alimente au fur et à mesure de ma formation (TryHackMe, HackTheBox, Root-Me, CTF, TP M2i) — reviens bientôt, ou suis ma progression en direct via le badge TryHackMe ci-dessus.",
+
   'devops.label': 'COULISSES TECHNIQUES',
   'devops.title': 'De Git à la production',
   'devops.intro': "Ce portfolio est aussi l'occasion de mettre en place un début de démarche DevOps : Docker pour reproduire fidèlement l'environnement dans lequel l'application va tourner, et GitHub Actions pour tester et vérifier automatiquement chaque déploiement avant qu'il n'arrive en production.",
@@ -136,6 +145,7 @@ const EN: Dict = {
   'nav.projects': 'PROJECTS',
   'nav.devops': 'DEVOPS',
   'nav.damageDetector': 'AI PROJECT',
+  'nav.labs': 'LABS',
   'nav.github': 'GITHUB',
 
   'hero.availability': 'SEEKING INTERNSHIP · FEB 15 – MAR 12 2027',
@@ -214,6 +224,14 @@ const EN: Dict = {
   'damageDetector.title': 'A bit of React and Node.js',
   'damageDetector.text': "To step outside the Angular/Spring Boot ecosystem used elsewhere in this portfolio, I built this project with a different stack: React on the frontend, Node.js/Express on the backend. The app uses AI to analyze a photo, detect the visible objects, and estimate the damage, loss and price of the items involved — a use case aimed particularly at the insurance industry, where it can speed up and improve the reliability of claims assessment.",
   'damageDetector.cta': 'View project',
+
+  'labs.label': 'CYBERSECURITY TRAINING',
+  'labs.title': 'Labs & Write-ups',
+  'labs.intro': "My progress through the RS7394 training, documented as I go: TryHackMe rooms, HackTheBox/Root-Me machines, CTFs and M2i coursework. Each write-up details the methodology followed, not just the result.",
+  'labs.linkedinLearning': 'View my LinkedIn Learning certificates',
+  'labs.viewWriteup': 'View write-up →',
+  'labs.emptyTitle': 'First write-ups in progress',
+  'labs.emptyText': "This section fills up as I progress through training (TryHackMe, HackTheBox, Root-Me, CTFs, M2i coursework) — check back soon, or follow my progress live via the TryHackMe badge above.",
 
   'devops.label': 'BEHIND THE SCENES',
   'devops.title': 'From Git to production',

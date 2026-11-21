@@ -27,6 +27,7 @@ export class App implements OnInit, AfterViewChecked {
   projects: any[] = [];
   skills: any = {};
   experiences: any[] = [];
+  labs: any[] = [];
   isLoading = false;
   userMessage = '';
   robotMood: 'idle' | 'thinking' | 'talking' = 'idle';
@@ -77,6 +78,13 @@ export class App implements OnInit, AfterViewChecked {
     this.portfolioService.getExperiences().subscribe({
       next: (data: any) => {
         this.experiences = data as any[];
+        this.cdr.detectChanges();
+      }
+    });
+
+    this.portfolioService.getLabs().subscribe({
+      next: (data: any) => {
+        this.labs = data as any[];
         this.cdr.detectChanges();
       }
     });
