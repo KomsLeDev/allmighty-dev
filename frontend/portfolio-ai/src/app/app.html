@@ -45,7 +45,14 @@
         <span>{{ i18n.t('hero.cyberChip') }}</span>
       </div>
       <div class="hero-actions">
-        <a class="primary-btn" href="#experience" (click)="scrollToSection('experience', $event)">{{ i18n.t('hero.viewPath') }}</a>
+        <a class="primary-btn" href="mailto:komsyang@gmail.com?subject=Stage%20DevSecOps%20%2F%20AppSec%20-%2015%2F02%20au%2012%2F03%2F2027">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M2 7l10 6 10-6"/>
+          </svg>
+          {{ i18n.t('hero.contactCta') }}
+        </a>
+        <a class="secondary-btn" href="#experience" (click)="scrollToSection('experience', $event)">{{ i18n.t('hero.viewPath') }}</a>
         <a class="secondary-btn" [href]="i18n.lang() === 'en' ? 'CV_Yang_Kong-Meng_EN.pdf' : 'CV_Yang_Kong-Meng.pdf'" target="_blank" rel="noopener">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>

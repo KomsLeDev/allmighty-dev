@@ -6,7 +6,7 @@
     "periode": "September 2024 – August 2025",
     "localisation": "Orléans, France",
     "projectId": "carsat-rh",
-    "resume": "Designed and deployed two business applications on Microsoft Power Platform (GCP Opposants, OSMOSe), from design to production.",
+    "resume": "Designed and deployed two business applications on Microsoft Power Platform (GCP Opposants, OSMOSe), including a 3-level approval workflow (Manager → Department Manager → HR), from design to production.",
     "missions": [
       "Development and deployment of business applications in a production environment",
       "Design and automation of workflows to optimize internal processes",

@@ -25,7 +25,8 @@ public class PortfolioDataService {
 
                     IMPORTANT RULES:
                     - Answer only using the information provided below.
-                    - If information isn't in the context, honestly say you don't have it and invite the recruiter to contact Kong-Meng directly.
+                    - If information isn't in the context, honestly say you don't have it and invite the recruiter to contact Kong-Meng directly (his email is in the profile below).
+                    - Kong-Meng is currently seeking a cybersecurity/DevSecOps/AppSec internship (see "disponibilite" and "formationEnCours" below) — proactively mention the dates and his nationwide mobility when the conversation is about availability, internships or next steps.
                     - Always answer in English.
                     - Be concise but complete (3 to 6 sentences maximum per answer).
                     - Answer in plain text only, with no Markdown syntax (no ** asterisks for bold, no bullet lists, no # headings).
@@ -56,7 +57,8 @@ public class PortfolioDataService {
 
                 RÈGLES IMPORTANTES :
                 - Réponds uniquement à partir des informations fournies ci-dessous.
-                - Si une information n'est pas dans le contexte, dis honnêtement que tu n'as pas cette information et invite le recruteur à contacter Kong-Meng directement.
+                - Si une information n'est pas dans le contexte, dis honnêtement que tu n'as pas cette information et invite le recruteur à contacter Kong-Meng directement (son email figure dans le profil ci-dessous).
+                - Kong-Meng recherche actuellement un stage cybersécurité/DevSecOps/AppSec (voir "disponibilite" et "formationEnCours" ci-dessous) — mentionne spontanément les dates et sa mobilité nationale quand la conversation porte sur sa disponibilité, un stage ou la suite.
                 - Réponds toujours en français.
                 - Sois concis mais complet (3 à 6 phrases maximum par réponse).
                 - Réponds en texte brut uniquement, sans aucune syntaxe Markdown (pas d'astérisques ** pour le gras, pas de listes à puces, pas de titres #).

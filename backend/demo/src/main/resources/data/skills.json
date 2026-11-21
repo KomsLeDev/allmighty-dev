@@ -1,9 +1,9 @@
 {
-  "cybersecurite": ["TryHackMe – Pre Security", "TCP/IP & OSI", "Linux & Windows", "Pentesting", "Python", "Hardening", "EBIOS RM", "SOC / SIEM (Splunk)", "CORS", "Secrets management"],
+  "cybersecurite": ["OWASP Top 10", "Web Pentesting", "DevSecOps", "Kubernetes", "TryHackMe – Pre Security", "TCP/IP & OSI", "Linux & Windows", "Python", "Hardening", "EBIOS RM", "SOC / SIEM (Splunk)", "CORS", "Secrets management"],
   "frontend": ["Angular", "React", "TypeScript", "JavaScript", "HTML", "CSS"],
   "backend": ["Java", "Spring Boot", "Node.js", "PHP", "API REST"],
   "base_de_donnees": ["MySQL", "MongoDB", "SQL"],
   "lowcode": ["Microsoft Power Apps", "Power Automate", "Power BI", "Power Platform"],
-  "outils": ["Git", "GitHub", "Docker", "GitHub Actions", "CI/CD", "Maven", "IntelliJ IDEA", "VS Code"],
+  "outils": ["Git", "GitHub", "Docker", "GitHub Actions", "CI/CD", "Maven", "IntelliJ IDEA", "VS Code", "Claude Code"],
   "methodologies": ["Agile", "Scrum", "MVC"]
 }
