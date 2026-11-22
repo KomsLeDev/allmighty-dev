@@ -1,10 +1,16 @@
 .project-page {
   --font-display: 'Space Grotesk', 'Inter', Arial, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --bg: #0b1220;
+  --bg-elevated: #111a2e;
+  --border: rgba(255,255,255,0.08);
+  --text: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent-blue: #60a5fa;
   min-height: 100vh;
-  background: #f8fafc;
+  background: var(--bg);
   font-family: 'Inter', Arial, sans-serif;
-  color: #071127;
+  color: var(--text);
 }
 
 .project-nav {
@@ -53,7 +59,7 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-.back-btn:hover { background: #e2e8f0; }
+.back-btn:hover { background: #cbd5e1; }
 
 .sec-hero {
   background: linear-gradient(135deg, #0b1324, #1d4ed8);
@@ -100,7 +106,7 @@
 }
 .sec-section p {
   font-size: 15.5px;
-  color: #475569;
+  color: var(--text-muted);
   line-height: 1.75;
   margin-bottom: 18px;
 }
@@ -129,8 +135,8 @@
 }
 .sec-score-badge--before { background: #ea580c; }
 .sec-score-badge--after { background: #16a34a; }
-.sec-score-label { font-size: 12px; font-weight: 600; color: #64748b; }
-.sec-score-arrow { color: #cbd5e1; flex-shrink: 0; }
+.sec-score-label { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+.sec-score-arrow { color: var(--text-muted); flex-shrink: 0; }
 
 .sec-list {
   list-style: none;
@@ -141,7 +147,7 @@
 }
 .sec-list li {
   font-size: 14.5px;
-  color: #334155;
+  color: var(--text-muted);
   padding-left: 20px;
   position: relative;
   line-height: 1.6;
@@ -150,7 +156,7 @@
   content: '→';
   position: absolute;
   left: 0;
-  color: #2563eb;
+  color: var(--accent-blue);
   font-weight: 700;
 }
 
@@ -175,14 +181,14 @@
   gap: 14px;
 }
 .sec-tool-card {
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(15,23,42,0.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-.sec-tool-card strong { font-family: var(--font-mono); display: block; font-size: 13.5px; margin-bottom: 4px; color: #0f172a; }
-.sec-tool-card span { font-size: 13px; color: #64748b; line-height: 1.5; }
+.sec-tool-card strong { font-family: var(--font-mono); display: block; font-size: 13.5px; margin-bottom: 4px; color: var(--text); }
+.sec-tool-card span { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
 
 .project-footer-bar {
   background: #071127;
