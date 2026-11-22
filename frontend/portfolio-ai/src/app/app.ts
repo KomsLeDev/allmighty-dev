@@ -1,7 +1,7 @@
-import { Component, OnInit, AfterViewInit, AfterViewChecked, ElementRef, ViewChild, ChangeDetectorRef, PLATFORM_ID, inject } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, ElementRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { PortfolioService } from './services/portfolio';
 import { I18nService, Lang } from './services/i18n';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { environment } from '../environments/environment';
@@ -19,12 +19,9 @@ interface Message {
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit, AfterViewInit, AfterViewChecked {
-
-  private platformId = inject(PLATFORM_ID);
+export class App implements OnInit, AfterViewChecked {
 
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
-  @ViewChild('tryhackmeBadge') tryhackmeBadge!: ElementRef<HTMLDivElement>;
 
   profile: any = null;
   projects: any[] = [];
@@ -54,23 +51,6 @@ export class App implements OnInit, AfterViewInit, AfterViewChecked {
       this.messages = [{ from: 'bot', text: this.i18n.t('chat.greeting'), time: this.currentTime() }];
       this.loadData();
     });
-  }
-
-  ngAfterViewInit(): void {
-    // Script tiers (badge TryHackMe) : uniquement côté navigateur, jamais pendant le pré-rendu côté serveur.
-    // Le script TryHackMe utilise document.write, refusé par les navigateurs pour un script injecté
-    // dynamiquement (appendChild). On l'isole donc dans un iframe srcdoc, où il fait partie du parsing
-    // HTML initial du mini-document et peut appeler document.write normalement.
-    if (isPlatformBrowser(this.platformId) && this.tryhackmeBadge) {
-      const badgeUrl = 'https://tryhackme.com/badge/t/eb2dab6412e6c2e771bae98367a3d0d4811123d2fc6d6a02c58deaed2e40b4b5aa1619da7366a5b129d4a71fc642433e?theme=dark';
-      const iframe = document.createElement('iframe');
-      iframe.sandbox.add('allow-scripts', 'allow-popups', 'allow-top-navigation-by-user-activation');
-      iframe.style.border = 'none';
-      iframe.style.width = '350px';
-      iframe.style.height = '166px';
-      iframe.srcdoc = `<!DOCTYPE html><html><head><style>body{margin:0;background:transparent;overflow:hidden}</style></head><body><script src="${badgeUrl}"><\/script></body></html>`;
-      this.tryhackmeBadge.nativeElement.appendChild(iframe);
-    }
   }
 
   loadData(): void {

@@ -282,7 +282,9 @@
     <p class="labs-intro">{{ i18n.t('labs.intro') }}</p>
 
     <div class="labs-badges">
-      <div #tryhackmeBadge class="tryhackme-badge-container"></div>
+      <a href="https://tryhackme.com/p/komsyang" target="_blank" rel="noopener" class="secondary-btn tryhackme-badge-link">
+        {{ i18n.t('labs.tryhackmeProfile') }}
+      </a>
       <a *ngIf="profile?.linkedin" [href]="profile.linkedin" target="_blank" rel="noopener" class="secondary-btn labs-linkedin-link">
         {{ i18n.t('labs.linkedinLearning') }}
       </a>

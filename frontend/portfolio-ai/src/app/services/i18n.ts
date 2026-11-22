@@ -96,9 +96,10 @@ const FR: Dict = {
   'labs.title': 'Labs & Write-ups',
   'labs.intro': "Ma progression en formation RS7394, documentée au fil de l'eau : salles TryHackMe, machines HackTheBox/Root-Me, CTF et TP du cursus M2i. Chaque write-up détaille la méthodologie suivie, pas juste le résultat.",
   'labs.linkedinLearning': 'Voir mes certifications LinkedIn Learning',
+  'labs.tryhackmeProfile': 'Voir mon profil TryHackMe →',
   'labs.viewWriteup': 'Voir le write-up →',
   'labs.emptyTitle': 'Premiers write-ups en cours de rédaction',
-  'labs.emptyText': "Cette section s'alimente au fur et à mesure de ma formation (TryHackMe, HackTheBox, Root-Me, CTF, TP M2i) — reviens bientôt, ou suis ma progression en direct via le badge TryHackMe ci-dessus.",
+  'labs.emptyText': "Cette section s'alimente au fur et à mesure de ma formation (TryHackMe, HackTheBox, Root-Me, CTF, TP M2i) — reviens bientôt, ou suis ma progression en direct via mon profil TryHackMe ci-dessus.",
 
   'secCase.label': 'ÉTUDE DE CAS',
   'secCase.title': 'Sécuriser mon portfolio',
@@ -259,9 +260,10 @@ const EN: Dict = {
   'labs.title': 'Labs & Write-ups',
   'labs.intro': "My progress through the RS7394 training, documented as I go: TryHackMe rooms, HackTheBox/Root-Me machines, CTFs and M2i coursework. Each write-up details the methodology followed, not just the result.",
   'labs.linkedinLearning': 'View my LinkedIn Learning certificates',
+  'labs.tryhackmeProfile': 'View my TryHackMe profile →',
   'labs.viewWriteup': 'View write-up →',
   'labs.emptyTitle': 'First write-ups in progress',
-  'labs.emptyText': "This section fills up as I progress through training (TryHackMe, HackTheBox, Root-Me, CTFs, M2i coursework) — check back soon, or follow my progress live via the TryHackMe badge above.",
+  'labs.emptyText': "This section fills up as I progress through training (TryHackMe, HackTheBox, Root-Me, CTFs, M2i coursework) — check back soon, or follow my progress live via my TryHackMe profile above.",
 
   'secCase.label': 'CASE STUDY',
   'secCase.title': 'Securing my portfolio',
