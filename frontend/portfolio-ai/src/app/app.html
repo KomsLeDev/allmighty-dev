@@ -69,15 +69,14 @@
     <!-- À PROPOS DE L'ASSISTANT IA -->
     <div class="ai-intro terminal-block">
       <div class="terminal-bar">
-        <span class="terminal-dot terminal-dot--red"></span>
-        <span class="terminal-dot terminal-dot--yellow"></span>
-        <span class="terminal-dot terminal-dot--green"></span>
-        <span class="terminal-path">~/{{ i18n.t('aiSection.fileLabel') }}</span>
+        <span class="terminal-bar-title">komsy@kali: ~</span>
       </div>
       <div class="terminal-body">
-        <p class="terminal-line"><span class="terminal-prompt">$</span> {{ i18n.t('aiSection.title') }}</p>
+        <p class="terminal-promptline">┌──(<span class="terminal-user">komsy</span>㉿<span class="terminal-user">kali</span>)-[<span class="terminal-cwd">~</span>]</p>
+        <p class="terminal-line"><span class="terminal-prompt">└─$</span> {{ i18n.t('aiSection.title') }}</p>
         <p class="terminal-output">{{ i18n.t('aiSection.text') }}</p>
-        <p class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cursor"></span></p>
+        <p class="terminal-promptline">┌──(<span class="terminal-user">komsy</span>㉿<span class="terminal-user">kali</span>)-[<span class="terminal-cwd">~</span>]</p>
+        <p class="terminal-line"><span class="terminal-prompt">└─$</span><span class="terminal-cursor"></span></p>
       </div>
     </div>
 
@@ -249,6 +248,21 @@
           <img src="/vercel_déploiment.png" alt="Frontend deploye sur Vercel" (click)="openZoom('/vercel_déploiment.png')">
         </div>
         <p class="pipeline-caption">{{ i18n.t('devops.deploy.caption') }}</p>
+      </div>
+    </div>
+
+    <div class="terminal-block devops-terminal">
+      <div class="terminal-bar">
+        <span class="terminal-bar-title">komsy@kali: ~/portfolio</span>
+      </div>
+      <div class="terminal-body">
+        <p class="terminal-line"><span class="terminal-prompt">$</span> git push origin main</p>
+        <p class="terminal-success">✓ {{ i18n.t('devops.terminal.ci') }}</p>
+        <p class="terminal-line"><span class="terminal-prompt">$</span> docker build -t portfolio-frontend .</p>
+        <p class="terminal-success">✓ {{ i18n.t('devops.terminal.docker') }}</p>
+        <p class="terminal-line"><span class="terminal-prompt">$</span> railway up &amp;&amp; vercel --prod</p>
+        <p class="terminal-success">✓ {{ i18n.t('devops.terminal.deploy') }}</p>
+        <p class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cursor"></span></p>
       </div>
     </div>
 
