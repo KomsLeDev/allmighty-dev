@@ -44,6 +44,7 @@ const FR: Dict = {
   'chat.collapse': 'Réduire le chat',
 
   'aiSection.label': "L'ASSISTANT IA",
+  'aiSection.fileLabel': 'comment-ca-marche.sh',
   'aiSection.title': 'Comment fonctionne le chat',
   'aiSection.text': "Le chat ci-dessus est propulsé par l'API Claude d'Anthropic (modèle Haiku), appelée depuis mon backend Spring Boot. Ce n'est pas un simple habillage conversationnel : à chaque question, le serveur construit dynamiquement un prompt système à partir de mes données réelles — profil, expériences, compétences et projets — stockées en JSON et exposées par ma propre API. L'IA est donc contrainte à ce contexte : elle ne répond jamais au hasard, et dit honnêtement quand une information n'y figure pas plutôt que de l'inventer. L'objectif est de donner aux recruteurs un moyen interactif d'explorer mon profil, avec des réponses toujours fidèles à la réalité.",
 
@@ -208,6 +209,7 @@ const EN: Dict = {
   'chat.collapse': 'Collapse chat',
 
   'aiSection.label': 'THE AI ASSISTANT',
+  'aiSection.fileLabel': 'how-it-works.sh',
   'aiSection.title': 'How the chat works',
   'aiSection.text': "The chat above is powered by Anthropic's Claude API (Haiku model), called from my Spring Boot backend. It isn't just a chat widget bolted on top: on every question, the server dynamically builds a system prompt from my actual data — profile, experience, skills and projects — stored as JSON and served through my own API. The AI is constrained to that context: it never answers at random, and honestly says when something isn't covered rather than making it up. The goal is to give recruiters an interactive way to explore my background, with answers that always stay grounded in reality.",
 

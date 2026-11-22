@@ -67,10 +67,18 @@
     </div>
 
     <!-- À PROPOS DE L'ASSISTANT IA -->
-    <div class="ai-intro">
-      <p class="section-label">{{ i18n.t('aiSection.label') }}</p>
-      <h3>{{ i18n.t('aiSection.title') }}</h3>
-      <p>{{ i18n.t('aiSection.text') }}</p>
+    <div class="ai-intro terminal-block">
+      <div class="terminal-bar">
+        <span class="terminal-dot terminal-dot--red"></span>
+        <span class="terminal-dot terminal-dot--yellow"></span>
+        <span class="terminal-dot terminal-dot--green"></span>
+        <span class="terminal-path">~/{{ i18n.t('aiSection.fileLabel') }}</span>
+      </div>
+      <div class="terminal-body">
+        <p class="terminal-line"><span class="terminal-prompt">$</span> {{ i18n.t('aiSection.title') }}</p>
+        <p class="terminal-output">{{ i18n.t('aiSection.text') }}</p>
+        <p class="terminal-line"><span class="terminal-prompt">$</span><span class="terminal-cursor"></span></p>
+      </div>
     </div>
 
     <!-- CHAT -->
